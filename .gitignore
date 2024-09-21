@@ -1,0 +1,48 @@
+# Node.js dependencies
+/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+.pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Output of `npm pack`
+*.tgz
+
+# Optional npm cache directory
+.npm
+
+# Coverage directory for test coverage reports
+coverage/
+
+# Temporary build directories
+/dist
+/build
+
+# Generated files from database tools (if applicable)
+/migrations
+
+# IDE and editor files
+/.vscode
+/.idea
+.DS_Store
+
+# OS-specific files
+Thumbs.db
+*.swp
+
+# Dependency directories
+/bower_components
