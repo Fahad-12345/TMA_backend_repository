@@ -36,6 +36,7 @@ export const up = async (queryInterface) => {
     },
   });
 };
+// test
 
 export const down = async (queryInterface) => {
   await queryInterface.dropTable('users');
