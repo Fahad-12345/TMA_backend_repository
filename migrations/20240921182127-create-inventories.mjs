@@ -2,19 +2,25 @@ import { DataTypes, Sequelize } from 'sequelize';
 
 export const up = async (queryInterface) => {
   await queryInterface.createTable('inventories', {
+    InventoryID:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true, 
+    },
     textbookID: {
-      type: DataTypes.STRING,
-      primaryKey: true,
+      foreignkey: true,
+      type: DataTypes.INTEGER,
       references: {
         model: 'textbooks',
         key: 'textbookID',
-      },
+      }
     },
     quantityAvailable: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     quantityOnLoan: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     createdAt: {
       allowNull: false,

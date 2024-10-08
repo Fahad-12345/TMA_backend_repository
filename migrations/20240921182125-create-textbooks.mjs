@@ -3,8 +3,9 @@ import { DataTypes, Sequelize } from 'sequelize';
 export const up = async (queryInterface) => {
   await queryInterface.createTable('textbooks', {
     textbookID: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER, 
       primaryKey: true,
+      autoIncrement: true, 
     },
     title: {
       type: DataTypes.STRING,

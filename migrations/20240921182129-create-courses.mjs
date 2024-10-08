@@ -10,17 +10,17 @@ export const up = async (queryInterface) => {
       type: DataTypes.STRING,
     },
     textbookID: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: 'textbooks',
         key: 'textbookID',
       },
     },
     instructorID: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: 'instructors',
-        key: 'userID',
+        key: 'instructorID',
       },
     },
     createdAt: {

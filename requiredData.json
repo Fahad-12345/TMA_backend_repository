@@ -1,0 +1,1038 @@
+[
+  {
+    "__EMPTY": "College of IT"
+  },
+  {
+    "__EMPTY": "Serial",
+    "__EMPTY_1": "Course Code",
+    "__EMPTY_2": "Book Title",
+    "__EMPTY_3": "Author(s)",
+    "__EMPTY_4": "ISBN",
+    "__EMPTY_5": "Publisher",
+    "__EMPTY_6": "Publication Year",
+    "__EMPTY_7": "Semester",
+    "__EMPTY_8": "Instructor Name",
+    "__EMPTY_9": "Instructor Banner ID",
+    "__EMPTY_10": "Remarks",
+    "__EMPTY_11": "Warehouse hardcopy book code ",
+    "__EMPTY_12": "Available Stock \r\n(Male Center, Female center, General Store)",
+    "__EMPTY_15": "College Recommendation & Remarks\r\nBased on the available stock in the previous column, decide which sections will be on hardcopy and which will switch to e-Textbook if available"
+  },
+  {
+    "__EMPTY": 1,
+    "__EMPTY_1": "CENG201",
+    "__EMPTY_2": "Basic Engineering Circuit Analysis, 11 Ed, 2015",
+    "__EMPTY_3": "J. D. Irwin, and R. M. Nelms",
+    "__EMPTY_4": "978-1118955994",
+    "__EMPTY_5": "Wiley",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Mohammad Hayajneh",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 2,
+    "__EMPTY_1": "CENG202",
+    "__EMPTY_2": "Discrete Mathematics And Its Applications 7e",
+    "__EMPTY_3": "Kenneth H.Rosen",
+    "__EMPTY_4": " 978-0073383095",
+    "__EMPTY_5": "Mc Graw Hall",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 3,
+    "__EMPTY_1": "CENG205",
+    "__EMPTY_2": "Logic and Computer Design Fundamentals",
+    "__EMPTY_3": "M. Morris R. Mano, Charles R. Kime, Tom Martin",
+    "__EMPTY_4": "ISBN: 9781292096070",
+    "__EMPTY_5": "Pearson ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Walid Ibrahim",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 4,
+    "__EMPTY_1": "CENG210",
+    "__EMPTY_2": "Data Communications And Networking 5E EBOOK",
+    "__EMPTY_3": "Behrouz A.Forouzan",
+    "__EMPTY_4": "ISBN:9789814577519",
+    "__EMPTY_5": "Mc Graw Hall",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Shawqi Kharbash",
+    "__EMPTY_15": "Lab"
+  },
+  {
+    "__EMPTY": 5,
+    "__EMPTY_1": "CENG221",
+    "__EMPTY_2": "Digital Design & Computer Architecture 2E",
+    "__EMPTY_3": "David Money Harris & Sarah L. Harris",
+    "__EMPTY_4": "9780123944245",
+    "__EMPTY_5": "Morgan Kaufmann ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 6,
+    "__EMPTY_1": "CENG231",
+    "__EMPTY_2": "Digital Design & Computer Architecture 2E",
+    "__EMPTY_3": "David Money Harris & Sarah L. Harris",
+    "__EMPTY_4": "9780123944245",
+    "__EMPTY_5": "Morgan Kaufmann ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 7,
+    "__EMPTY_1": "CENG320",
+    "__EMPTY_2": "A Practical Approach to Signals and Systems",
+    "__EMPTY_3": "D. Sundararajan",
+    "__EMPTY_4": "ISBN 9780470823545",
+    "__EMPTY_5": " John Wiley & Sons ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 8,
+    "__EMPTY_1": "CENG324",
+    "__EMPTY_2": "Digital Systems Design and Practice: Using Verilog HDL and FPGAs,Ming-Bo Lin,ISBN: 9781514313305,",
+    "__EMPTY_3": "Ming-Bo Lin",
+    "__EMPTY_4": "ISBN: 9781514313305",
+    "__EMPTY_5": "CreateSpace Independent Publishing Platform",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "changed last term"
+  },
+  {
+    "__EMPTY": 9,
+    "__EMPTY_1": "CENG325",
+    "__EMPTY_2": "Digital Systems Design and Practice: Using Verilog HDL and FPGAs,Ming-Bo Lin,ISBN: 9781514313305,",
+    "__EMPTY_3": "Ming-Bo Lin",
+    "__EMPTY_4": "ISBN: 9781514313305",
+    "__EMPTY_5": "CreateSpace Independent Publishing Platform",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "changed last term"
+  },
+  {
+    "__EMPTY": 10,
+    "__EMPTY_1": "CENG328",
+    "__EMPTY_2": "C Programming for Arduino",
+    "__EMPTY_3": "Julien Bayle",
+    "__EMPTY_4": "ISBN-13: 9781849517584",
+    "__EMPTY_5": "Packt Publishing",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Heng",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 11,
+    "__EMPTY_1": "CENG329",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "will not be taught"
+  },
+  {
+    "__EMPTY": 12,
+    "__EMPTY_1": "CENG513",
+    "__EMPTY_2": "Fault-Tolerant Design",
+    "__EMPTY_3": "Elena Dubrova",
+    "__EMPTY_4": "978146141122",
+    "__EMPTY_5": "Springer",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 13,
+    "__EMPTY_1": "CENG529",
+    "__EMPTY_7": "F,Sp",
+    "__EMPTY_15": "will not be taught"
+  },
+  {
+    "__EMPTY": 14,
+    "__EMPTY_1": "CENG530",
+    "__EMPTY_2": "TCP/IP PROTOCOL SUITE 4TH  EDITIONE-BOOK",
+    "__EMPTY_3": "BEHROUZ A. FOROUZAN WITH SOPHIA CHUNG FEGAN",
+    "__EMPTY_4": "ISBN:9781121862265",
+    "__EMPTY_5": "Mc-Graw Hill",
+    "__EMPTY_7": "F,SP",
+    "__EMPTY_11": "1/9/1/21",
+    "__EMPTY_12": "14-3e",
+    "__EMPTY_13": "16-3e",
+    "__EMPTY_14": 15,
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 15,
+    "__EMPTY_1": "CENG533",
+    "__EMPTY_2": "Carrier Grade Voice Over IP 3E",
+    "__EMPTY_3": "Daniel Collins",
+    "__EMPTY_4": "ISBN:  0071827714",
+    "__EMPTY_5": " Mc Graw Hall",
+    "__EMPTY_7": "F,SP",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 16,
+    "__EMPTY_1": "CENG532",
+    "__EMPTY_2": "Network Security, Firewalls, and VPNS 2E",
+    "__EMPTY_3": "Michael Stewart",
+    "__EMPTY_4": "ISBN: 9780763791308",
+    "__EMPTY_5": "Jones & Bartlett Learning",
+    "__EMPTY_7": "F,SP",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 17,
+    "__EMPTY_1": "CSBP112",
+    "__EMPTY_2": "C++ Programming: From Problem Analysis to Program Design.",
+    "__EMPTY_3": "D. S. Malik",
+    "__EMPTY_4": "ISBN: 9781337514491",
+    "__EMPTY_5": "Cengage Learning",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_10": 10901143,
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 18,
+    "__EMPTY_1": "CSBP119",
+    "__EMPTY_2": "Starting out with Python 5th edition",
+    "__EMPTY_3": "Tony Gaddis,",
+    "__EMPTY_4": ", . .  ISBN: 9780136679110",
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 19,
+    "__EMPTY_1": "CSBP121",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "lab"
+  },
+  {
+    "__EMPTY": 20,
+    "__EMPTY_1": "CSBP219",
+    "__EMPTY_2": "Java: An Introduction to Problem Solving & Programming ",
+    "__EMPTY_3": "Walter Savitch Frank M. Carrano",
+    "__EMPTY_4": "978-0131354517",
+    "__EMPTY_5": "Pearson Prenctice hall",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 21,
+    "__EMPTY_1": "CSBP221",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Lab"
+  },
+  {
+    "__EMPTY": 22,
+    "__EMPTY_1": "CSBP301",
+    "__EMPTY_2": "  Artificial Intelligence: A Modern Approach, Global Edition",
+    "__EMPTY_3": " Stuart Russell",
+    "__EMPTY_4": " 9781292153971, 1292153970",
+    "__EMPTY_5": "Pearson (Intl)",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Fady Alnajjar",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 23,
+    "__EMPTY_1": "CSBP315",
+    "__EMPTY_2": "Operating Systems Concepts 9e",
+    "__EMPTY_3": "Abrahahm Silberschatz, Peter B. Galvin, and Greg Gagne",
+    "__EMPTY_4": "ISBN: 9781118093757",
+    "__EMPTY_5": "John Wiley & Sons",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_11": 10201119,
+    "__EMPTY_12": 29,
+    "__EMPTY_13": 4,
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 24,
+    "__EMPTY_1": "CSBP316",
+    "__EMPTY_2": "Interaction Design: Beyond Human-Computer Interaction, 4th Edition",
+    "__EMPTY_3": "Jenny Preece, Helen Sharp, Yvonne Rogers",
+    "__EMPTY_4": "E-Book ISBN : 978-1-119-08879-0",
+    "__EMPTY_5": "Wiley",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Salah Bouktif",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 25,
+    "__EMPTY_1": "CSBP319",
+    "__EMPTY_2": "DATA STRUCTURES  AND ALGORITHMS IN JAVA 4TH EDITION",
+    "__EMPTY_3": "MICHAEL T. GOODRICH AND ROBERT TAMASSIA",
+    "__EMPTY_4": " ISBN 0-471-73884-0&ISBN:978-0-471-73884-8",
+    "__EMPTY_5": "Wiley",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 26,
+    "__EMPTY_1": "CSBP320",
+    "__EMPTY_2": "Data Mining: Practical Machine Learning Tools and Techniques 4th Edition ",
+    "__EMPTY_3": "Ian H. Witten/   Eibe Frank",
+    "__EMPTY_4": " 978-0128042915",
+    "__EMPTY_5": " (Morgan Kaufmann Series in Data Management Systems)",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_11": "old book :Data Mining Techniques and Application an Introduction,Hongbo Du,Cengage Learning 978-8131519554 stock 33 010902048",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 27,
+    "__EMPTY_1": "CSBP340",
+    "__EMPTY_2": "Fundamental of Database systems (7th edition)",
+    "__EMPTY_3": "Ramez Elmasri, Shamkant B. Navathe",
+    "__EMPTY_4": "978-0133970777",
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_11": 10201194,
+    "__EMPTY_12": "12-6e",
+    "__EMPTY_13": 25,
+    "__EMPTY_15": "the stock is old edition  Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 28,
+    "__EMPTY_1": "CSBP400",
+    "__EMPTY_2": "Simio & Simulation: Modeling, Analysis & Applications 2E",
+    "__EMPTY_3": "W. Kelton",
+    "__EMPTY_4": "ISBN-13: 978-0-98-297825-2",
+    "__EMPTY_5": "Mc Graw Hall",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Leila Ismail",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 29,
+    "__EMPTY_1": "CSBP411",
+    "__EMPTY_2": "Data Mining: Practical Machine Learning Tools and Techniques 4/E, ",
+    "__EMPTY_3": "Ian H. Witten, Eibe Frank, Mark A. Hall, Christopher J. Pal",
+    "__EMPTY_4": "978-0128042915",
+    "__EMPTY_5": "Elsevier",
+    "__EMPTY_7": "F,Sp",
+    "__EMPTY_8": "Nazar Zaki",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 30,
+    "__EMPTY_1": "CSBP461",
+    "__EMPTY_2": "Learn Java for Web Development",
+    "__EMPTY_3": "Vishal Layka",
+    "__EMPTY_4": 9781430259848,
+    "__EMPTY_5": "Apress ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 31,
+    "__EMPTY_1": "CSBP483",
+    "__EMPTY_2": "Xamarin Mobile Application Development for Android",
+    "__EMPTY_3": "Reynolds, Mark",
+    "__EMPTY_4": "ebook isbn: 9781783559176 ",
+    "__EMPTY_5": "Packt Publishing ",
+    "__EMPTY_7": "F,SP",
+    "__EMPTY_8": "Mamoun Awad",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 32,
+    "__EMPTY_1": "CSBP492",
+    "__EMPTY_7": "F,SP",
+    "__EMPTY_15": "No need for textbook"
+  },
+  {
+    "__EMPTY": 33,
+    "__EMPTY_1": "ISEC311",
+    "__EMPTY_2": "Network Security, Firewalls And VPNs, Edition, (July 25, 2013),",
+    "__EMPTY_3": "J. Michael Stewart.",
+    "__EMPTY_4": 1284031675,
+    "__EMPTY_5": " Jones & Bartlett Learning Information Systems",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 34,
+    "__EMPTY_1": "ISEC312",
+    "__EMPTY_2": "Cryptography & Network Security: Principles & Practice 8E",
+    "__EMPTY_3": "William Stallings",
+    "__EMPTY_4": "ISBN-13 : 9780134444284",
+    "__EMPTY_5": "Pearson ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Yousef Al Hammadi",
+    "__EMPTY_11": "1/9/1/6",
+    "__EMPTY_12": "14-5e",
+    "__EMPTY_13": 2,
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 35,
+    "__EMPTY_1": "ISEC321",
+    "__EMPTY_2": "Guide to Network Defense and Countermeasures 3rd Edition,  3 edition",
+    "__EMPTY_3": "Randy Weaver, Dawn Weaver, Dean Farwood.",
+    "__EMPTY_4": "978-1285611259",
+    "__EMPTY_5": "Cengage",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Zouheir Trabelsi",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 36,
+    "__EMPTY_1": "ISEC322",
+    "__EMPTY_2": "Network Security Essentials: Applications and Standards   Paperback – 28 July 2016",
+    "__EMPTY_3": "William Stallings ",
+    "__EMPTY_4": "ISBN-13: 978-0134527338",
+    "__EMPTY_5": "Pearson ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 37,
+    "__EMPTY_1": "ISEC323",
+    "__EMPTY_2": "Core Software Security: Security at the Source 1st Edition",
+    "__EMPTY_3": "James Ransome (Author), Anmol Misra  (Author)",
+    "__EMPTY_4": " ISBN-13: 978-1466560956\r\n• ISBN-10: 1466560959",
+    "__EMPTY_5": "Auerbach Publications; 1 edition (December 9, 2013)",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Mohammad Masud",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 38,
+    "__EMPTY_1": "ISEC324",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "not offred"
+  },
+  {
+    "__EMPTY": 39,
+    "__EMPTY_1": "ISEC411",
+    "__EMPTY_2": "Faculty Handouts",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "No book needed"
+  },
+  {
+    "__EMPTY": 40,
+    "__EMPTY_1": "ISEC412",
+    "__EMPTY_2": "Digital Archaeology : The Art & Science Of Digital Forensics ",
+    "__EMPTY_3": "Graves, M.",
+    "__EMPTY_4": 9780321803900,
+    "__EMPTY_5": " Pearson Addison Wesley Educational Publishers Inc",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 41,
+    "__EMPTY_1": "ISEC413",
+    "__EMPTY_2": "Security Engineering: A Guide to Building Dependable Distributed Systems , (second edition)",
+    "__EMPTY_3": "Ross J. Anderson",
+    "__EMPTY_4": "ISBN-13: 9780470068526",
+    "__EMPTY_5": "Wiley Co.",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Khalid Shuaib",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 42,
+    "__EMPTY_1": "ISEC414",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "not offered"
+  },
+  {
+    "__EMPTY": 43,
+    "__EMPTY_1": "ISEC421",
+    "__EMPTY_2": "IT Security Risk Control Management: An Audit Preparation Plan",
+    "__EMPTY_3": "Raymond Pompon",
+    "__EMPTY_4": "978-1-4842-2140-2 (ebook)",
+    "__EMPTY_5": "Apress",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Ezedin barka",
+    "__EMPTY_15": "not offred"
+  },
+  {
+    "__EMPTY": 44,
+    "__EMPTY_1": "ISEC422",
+    "__EMPTY_2": "Security Program & Polices: Principles & Practices 2E",
+    "__EMPTY_3": "Greene, S.",
+    "__EMPTY_4": 9780789751676,
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 45,
+    "__EMPTY_1": "ISEC423",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "ot offred in  Sp23"
+  },
+  {
+    "__EMPTY": 46,
+    "__EMPTY_1": "ITBP103",
+    "__EMPTY_2": "Computer Science: An Overview 12th Edition, Pearson, 2015",
+    "__EMPTY_3": "J. Glenn Brookshear and Dennis Brylow",
+    "__EMPTY_4": "ISBN eBook: 9781292061801",
+    "__EMPTY_5": "Pearson Education Limited",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Nabil Alqirim",
+    "__EMPTY_15": "not offred in Sp23"
+  },
+  {
+    "__EMPTY": 47,
+    "__EMPTY_1": "ITBP280",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "no textbook is needed so far "
+  },
+  {
+    "__EMPTY": 48,
+    "__EMPTY_1": "ITBP301",
+    "__EMPTY_2": "Computer Security Principles and Practice, 3E",
+    "__EMPTY_3": "William Stallings           Lawrie Brown",
+    "__EMPTY_4": "ISBN:13: 9780133773927 & 10: 0133773922",
+    "__EMPTY_5": "PEARSON",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Khalid Shuaib",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 49,
+    "__EMPTY_1": "ITBP307",
+    "__EMPTY_2": "Management Information Systems 14E,EBOOK",
+    "__EMPTY_3": "KENNETH C. LAUDON, CAROL GUERCIO TRAVER",
+    "__EMPTY_4": "ISBN: 9781292094007",
+    "__EMPTY_5": "Prentice Hall",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Adel Serhani",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 50,
+    "__EMPTY_1": "ITBP319",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "not offred"
+  },
+  {
+    "__EMPTY": 51,
+    "__EMPTY_1": "ITBP321",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "It is lab"
+  },
+  {
+    "__EMPTY": 52,
+    "__EMPTY_1": "ITBP370",
+    "__EMPTY_2": "Ethics and Technology: Controversies, Questions, and Strategies for Ethical Computing, 5th Edition",
+    "__EMPTY_3": "Herman Tavani",
+    "__EMPTY_4": "978-1-119-18657-1",
+    "__EMPTY_5": "Wiley",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Boumediene Belkhouche",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 53,
+    "__EMPTY_1": "ITBP418",
+    "__EMPTY_2": "Entrepreneurship and New Venture Creation in IT, 4th Edition",
+    "__EMPTY_3": "Thomas H. Byers, Richard C. Dorf",
+    "__EMPTY_4": 77166493,
+    "__EMPTY_5": "McGraw Hill",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Nabil Alqirim",
+    "__EMPTY_15": "request is sent to the instructors to suggest ebook version"
+  },
+  {
+    "__EMPTY": 54,
+    "__EMPTY_1": "ITBP480",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 55,
+    "__EMPTY_1": "ITBP481",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 56,
+    "__EMPTY_1": "ITBP495",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 57,
+    "__EMPTY_1": "NEBP331",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 58,
+    "__EMPTY_1": "NEBP361",
+    "__EMPTY_2": "Network Security, Firewalls, and VPNS 2E",
+    "__EMPTY_3": "Michael Stewart",
+    "__EMPTY_4": "ISBN: 9780763791308",
+    "__EMPTY_5": "Jones & Bartlett Learning",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Hesham Elsayed"
+  },
+  {
+    "__EMPTY": 59,
+    "__EMPTY_1": "NEBP421",
+    "__EMPTY_2": "Carrier Grade Voice Over IP latest edition (Ebook)",
+    "__EMPTY_3": "Daniel Collins",
+    "__EMPTY_4": " ISBN-13: 978-0071827713",
+    "__EMPTY_5": "Mc Graw Hall",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_8": "Najah Abu Ali"
+  },
+  {
+    "__EMPTY": 60,
+    "__EMPTY_1": "NEBP432",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 61,
+    "__EMPTY_1": "NEBP433",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 62,
+    "__EMPTY_1": "NEBP460",
+    "__EMPTY_2": "To be added by Lakas",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 63,
+    "__EMPTY_1": "NEBP470",
+    "__EMPTY_2": "Top-Down Network Design 3E",
+    "__EMPTY_3": "Priscilla Oppenheimer",
+    "__EMPTY_4": "ISBN: 9781587202834",
+    "__EMPTY_5": "Cisco Press-pearson",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_9": "Same e-textbook as CENG580",
+    "__EMPTY_11": 10901096,
+    "__EMPTY_12": 0,
+    "__EMPTY_13": 19,
+    "__EMPTY_14": 15
+  },
+  {
+    "__EMPTY": 64,
+    "__EMPTY_1": "SECB408",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 65,
+    "__EMPTY_1": "SECB425",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 66,
+    "__EMPTY_1": "SECB455",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 67,
+    "__EMPTY_1": "SWEB300",
+    "__EMPTY_2": "Object-Oriented Software Engineering 3e: using UML, patterns and Java",
+    "__EMPTY_3": "Bernd Breugge, Allen H Dutoit",
+    "__EMPTY_4": "ISBN 10, 0-13-815221-7",
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 68,
+    "__EMPTY_1": "CENG531",
+    "__EMPTY_2": "Guide to Wireless Communications",
+    "__EMPTY_3": "Jorge L. Olenewa",
+    "__EMPTY_4": " 978-1111545697",
+    "__EMPTY_5": "Cengage",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 69,
+    "__EMPTY_1": "CSBP487",
+    "__EMPTY_2": " Visualization Analysis and Design, 1/E, A K Peters Visualization Series,",
+    "__EMPTY_3": "Tamara Munzner,",
+    "__EMPTY_4": "ISBN: 978-1466508910",
+    "__EMPTY_5": "Peters Visualization Series, CRC Press, 2014",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 70,
+    "__EMPTY_1": "CSBP491",
+    "__EMPTY_2": " Guide to Intelligent data analysis: How to Intelligently Make Sense of Real Data?, 1/E, ",
+    "__EMPTY_3": "Michael R. Berthold, Christian Borgelt, Frank Höppner, and Frank Klawonn,",
+    "__EMPTY_4": "ISBN:978-1-84882-259-7",
+    "__EMPTY_5": "Springer-Verlag London, 2010",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 71,
+    "__EMPTY_1": "CSBP123",
+    "__EMPTY_2": "Starting out with Python 5th edition",
+    "__EMPTY_3": "Tony Gaddis,",
+    "__EMPTY_4": ", . .  ISBN: 9780136679110",
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 72,
+    "__EMPTY_1": "ITBP322",
+    "__EMPTY_2": "Android Studio Development Essentials - Android 6 Edition",
+    "__EMPTY_3": "Neil Smyth",
+    "__EMPTY_4": "ISBN-10: 1519722087",
+    "__EMPTY_5": "CreateSpace Independent Publishing ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using etextbook???, \"Android Studio Development Essentials - Android 6 Edition,Neil Smyth,ISBN-10: 1519722087,CreateSpace Independent Publishing "
+  },
+  {
+    "__EMPTY": 73,
+    "__EMPTY_1": "ITBP323",
+    "__EMPTY_2": "Effective Methods for Software and Systems Integration 1st Edition, ",
+    "__EMPTY_3": "Boyd L. Summers ",
+    "__EMPTY_4": "ISBN 9781439876626 ",
+    "__EMPTY_5": " Auerbach Publications,183 Pages 32 B/W Illustrations",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Please Check for  ebook version "
+  },
+  {
+    "__EMPTY": 74,
+    "__EMPTY_1": "ITBP324",
+    "__EMPTY_2": "Cloud Computing: Business Trends and Technologies, ",
+    "__EMPTY_3": " Igor Faynberg, Kui-Lan Lu, and Dor Skuler, ",
+    "__EMPTY_4": "ISBN: 978-1-118-50121-4",
+    "__EMPTY_5": "Wiley",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 75,
+    "__EMPTY_1": "CSBP431",
+    "__EMPTY_2": "Exploring Bioinformatics A Project-based Approach, 2nd Ed",
+    "__EMPTY_3": "Caroline St. Clair; Jonathan E. Visick",
+    "__EMPTY_4": 9781284034240,
+    "__EMPTY_5": "Jones & Bartlett Learning",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 76,
+    "__EMPTY_1": "CSBP411",
+    "__EMPTY_2": "Data Mining: Practical Machine Learning Tools and Techniques 4/E, ",
+    "__EMPTY_3": "Ian H. Witten, Eibe Frank, Mark A. Hall, Christopher J. Pal",
+    "__EMPTY_4": "978-0128042915",
+    "__EMPTY_5": "Elsevier",
+    "__EMPTY_7": "F,Sp",
+    "__EMPTY_8": "Nazar Zaki"
+  },
+  {
+    "__EMPTY": 77,
+    "__EMPTY_1": "GEIT112",
+    "__EMPTY_2": "The Fourth Industrial Revolution",
+    "__EMPTY_3": "Klaus Schwab",
+    "__EMPTY_4": "ISBN13 9780241300756",
+    "__EMPTY_5": " Penguin Books Ltd",
+    "__EMPTY_7": "F,Sp",
+    "__EMPTY_15": "looking sofar without success for an  ebook"
+  },
+  {
+    "__EMPTY": 78,
+    "__EMPTY_1": "CSBP412",
+    "__EMPTY_2": "Engineering Design, A Materials and Processing Approach, 5th Edition, McGraw-Hill.( February 16, 2012)",
+    "__EMPTY_3": "George Dieter and Linda Schmidt",
+    "__EMPTY_4": "978-0073398143",
+    "__EMPTY_5": "McGraw - Hill",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 79,
+    "__EMPTY_1": "ISEC421",
+    "__EMPTY_2": "Security Engineering: A Guide to Building Dependable Distributed Systems , (second edition)",
+    "__EMPTY_3": "Ross J. Anderson",
+    "__EMPTY_4": "ISBN-13: 9780470068526",
+    "__EMPTY_5": "Wiley Co.",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 80,
+    "__EMPTY_1": "ISEC421",
+    "__EMPTY_2": "Digital Archaeology : The Art & Science Of Digital Forensics ",
+    "__EMPTY_3": "Graves, M.",
+    "__EMPTY_4": 9780321803900,
+    "__EMPTY_5": " Pearson Addison Wesley Educational Publishers Inc",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 81,
+    "__EMPTY_1": "ITBP410",
+    "__EMPTY_2": "The Internet of Things: Enabling Technologies, Platforms, and Use Cases",
+    "__EMPTY_3": "Pethuru Raj, Anupama C. Raman",
+    "__EMPTY_4": " ISBN: 1498761291, 9781498761291",
+    "__EMPTY_5": "CRC Press, ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "request is sent to the instructors to suggest ebook version"
+  },
+  {
+    "__EMPTY": 82,
+    "__EMPTY_1": "CENG531",
+    "__EMPTY_2": "Guide to Wireless Communications",
+    "__EMPTY_3": "Jorge L. Olenewa",
+    "__EMPTY_4": " 978-1111545697",
+    "__EMPTY_5": "Cengage",
+    "__EMPTY_7": "SP",
+    "__EMPTY_8": "Farag Sallabi"
+  },
+  {
+    "__EMPTY": 83,
+    "__EMPTY_1": "CSBP421",
+    "__EMPTY_7": "sp"
+  },
+  {
+    "__EMPTY": 84,
+    "__EMPTY_1": "ITBP498",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 85,
+    "__EMPTY_1": "NEBP371",
+    "__EMPTY_7": "Sp"
+  },
+  {
+    "__EMPTY": 86,
+    "__EMPTY_1": "NEBP441",
+    "__EMPTY_2": "Guide to Wireless Communications",
+    "__EMPTY_3": "Jorge L. Olenewa",
+    "__EMPTY_4": " 978-1111545697",
+    "__EMPTY_5": "Cengage",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 87,
+    "__EMPTY_1": "NEBP470",
+    "__EMPTY_2": "Top-Down Network Design 3E",
+    "__EMPTY_3": "Priscilla Oppenheimer",
+    "__EMPTY_4": "ISBN: 9781587202834",
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 88,
+    "__EMPTY_1": "SWEB300",
+    "__EMPTY_2": "Object-Oriented Software Engineering 3e: using UML, patterns and Java",
+    "__EMPTY_3": "Bernd Breugge, Allen H Dutoit",
+    "__EMPTY_4": "ISBN 10, 0-13-815221-7",
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 89,
+    "__EMPTY_1": "CSBP431",
+    "__EMPTY_2": "Exploring Bioinformatics A Project-based Approach, 2nd Ed",
+    "__EMPTY_3": "Caroline St. Clair; Jonathan E. Visick",
+    "__EMPTY_4": 9781284034240,
+    "__EMPTY_5": "Jones & Bartlett Learning",
+    "__EMPTY_7": "Sp"
+  },
+  {
+    "__EMPTY": 90,
+    "__EMPTY_1": "SWEB401",
+    "__EMPTY_2": "Professional ASP.NET 4.5 in C# and VB",
+    "__EMPTY_3": "Jason N. Gaylord (Author), Christian Wenz (Author), Pranav Rastogi (Author), Todd Miranda (Author), Scott Hanselman",
+    "__EMPTY_4": "ISBN-13: 978-1118311820, ASIN: B00CX6S7UO",
+    "__EMPTY_5": "Wiley",
+    "__EMPTY_7": "Sp"
+  },
+  {
+    "__EMPTY": 91,
+    "__EMPTY_1": "SWEB423",
+    "__EMPTY_2": "Introduction to Software Testing",
+    "__EMPTY_3": "Paul Ammann, Jeff Offutt ",
+    "__EMPTY_4": "ISBN-13: 978-1107172012",
+    "__EMPTY_5": "Cambridge University Press; 2 edition",
+    "__EMPTY_7": "Sp"
+  },
+  {
+    "__EMPTY": 92,
+    "__EMPTY_1": "SWEB450",
+    "__EMPTY_2": "Introduction to the Design and Analysis of Algorithms",
+    "__EMPTY_3": "Anany Levitin",
+    "__EMPTY_4": "ISBN-13: 9780134281209",
+    "__EMPTY_5": "Pearson",
+    "__EMPTY_7": "Sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY": 93,
+    "__EMPTY_1": "SWEB451",
+    "__EMPTY_2": "FUNDAMENTALS OF GAME DESIGN, THIRD EDITION",
+    "__EMPTY_3": "Ernest Adams",
+    "__EMPTY_4": "978-0321929679",
+    "__EMPTY_5": "pearson",
+    "__EMPTY_7": "Sp",
+    "__EMPTY_8": "Boumediene Belkhouche"
+  },
+  {
+    "__EMPTY": 94,
+    "__EMPTY_1": "CSBP421 ",
+    "__EMPTY_2": " Fundamentals of Computer Graphics",
+    "__EMPTY_3": "Peter Shirley, Michael Ashikhmin, Steve Marschner",
+    "__EMPTY_4": "ISBN13 9781482229394",
+    "__EMPTY_5": "Apple Academic Press Inc.",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "request is being sent to the department to update for an ebook"
+  },
+  {
+    "__EMPTY": 95,
+    "__EMPTY_1": "ISEC418",
+    "__EMPTY_2": "Request sent to coordinators and instructors to be updated to textbook ",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 96,
+    "__EMPTY_1": "CSBP476",
+    "__EMPTY_2": "Introduction to Autonomous Mobile Robots (Intelligent Robotics and Autonomous Agents series) second edition Edition",
+    "__EMPTY_3": "Roland Siegwart, Illah Reza Nourbakhsh and Davide Scaramuzza",
+    "__EMPTY_4": "978-0262015356",
+    "__EMPTY_5": "The MIT Press; second edition edition ",
+    "__EMPTY_7": "F,sp",
+    "__EMPTY_15": "Using e-Textbooks "
+  },
+  {
+    "__EMPTY_1": "CSBP476",
+    "__EMPTY_2": "Introduction to Autonomous Mobile Robots (Intelligent Robotics and Autonomous Agents series) second edition Edition",
+    "__EMPTY_3": "The MIT Press; second edition edition ",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": "Graduate Courses"
+  },
+  {
+    "__EMPTY": "Serial",
+    "__EMPTY_1": "Course Code",
+    "__EMPTY_2": "Book Title",
+    "__EMPTY_3": "Author(s)",
+    "__EMPTY_4": "ISBN",
+    "__EMPTY_5": "Publisher",
+    "__EMPTY_6": "Publication Year",
+    "__EMPTY_7": "Semester",
+    "__EMPTY_8": "Instructor Name",
+    "__EMPTY_9": "Instructor Banner ID",
+    "__EMPTY_10": "Remarks",
+    "__EMPTY_11": "Warehouse hardcopy book code ",
+    "__EMPTY_12": "Available Stock \r\n(Male Center, Female center, General Store)",
+    "__EMPTY_15": "College Recommendation & Remarks\r\nBased on the available stock in the previous column, decide which sections will be on hardcopy and which will switch to e-Textbook if available"
+  },
+  {
+    "__EMPTY": 1,
+    "__EMPTY_1": "ISBP635",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 2,
+    "__EMPTY_1": "ITCO601",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 3,
+    "__EMPTY_1": "ITCO602",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 4,
+    "__EMPTY_1": "ITCO603",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 5,
+    "__EMPTY_1": "ITPG690",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 6,
+    "__EMPTY_1": "ITPG699",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 7,
+    "__EMPTY_1": "ITPG800",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 8,
+    "__EMPTY_1": "ITPG900",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 9,
+    "__EMPTY_1": "ITPG960",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 10,
+    "__EMPTY_1": "SECB624",
+    "__EMPTY_7": "F,sp"
+  },
+  {
+    "__EMPTY": 11,
+    "__EMPTY_1": "ISBP637",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 12,
+    "__EMPTY_1": "ITPG701",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 13,
+    "__EMPTY_1": "ITPG810",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 14,
+    "__EMPTY_1": "SECB623",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 15,
+    "__EMPTY_1": "SECB627",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 16,
+    "__EMPTY_1": "SECB628",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 17,
+    "__EMPTY_1": "SECB701",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 18,
+    "__EMPTY_1": "SECB703",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 19,
+    "__EMPTY_1": "SWEB651",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 20,
+    "__EMPTY_1": "SWEB652",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY": 21,
+    "__EMPTY_1": "SWEB653",
+    "__EMPTY_7": "SP"
+  },
+  {
+    "__EMPTY_2": "Missing books"
+  },
+  {
+    "__EMPTY": 1,
+    "__EMPTY_1": "CENG580",
+    "__EMPTY_2": "Top-Down Network Design 3E",
+    "__EMPTY_3": "Priscilla Oppenheimer",
+    "__EMPTY_4": "ISBN: 9781587202834",
+    "__EMPTY_5": "pearson",
+    "__EMPTY_7": "F,Sp",
+    "__EMPTY_10": 10901096,
+    "__EMPTY_15": "Using e-Textbooks "
+  }
+]

@@ -2,9 +2,15 @@ import { DataTypes, Sequelize } from 'sequelize';
 
 export const up = async (queryInterface) => {
   await queryInterface.createTable('sec_employees', {
-    userID: {
-      type: DataTypes.STRING,
+    employeeID:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
+      autoIncrement: true, 
+    },
+    userID: {
+      type: DataTypes.INTEGER,
+      foreignkey: true,
       references: {
         model: 'users',
         key: 'userID',

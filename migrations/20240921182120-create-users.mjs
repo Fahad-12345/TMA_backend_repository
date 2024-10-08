@@ -3,9 +3,10 @@ import { DataTypes, Sequelize } from 'sequelize';
 export const up = async (queryInterface) => {
   await queryInterface.createTable('users', {
     userID: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true, 
     },
     Name: {
       type: DataTypes.STRING,
