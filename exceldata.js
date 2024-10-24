@@ -38,10 +38,6 @@ const readExcelFile = () => {
   const headers = data[0]; // Get the first row as headers
   const rows = data.slice(1); // Get the remaining rows
 
-  // Check the headers and rows for debugging
-  console.log('Headers:', headers);
-  console.log('Rows:', rows);
-
   // Map the rows to objects using headers
   const mappedData = rows.map(row => {
     const rowData = {};
@@ -111,9 +107,8 @@ const inventriesData = async (data) => {
       `;
       const findTextbookValues = [title,isbn];
       
-        console.log(findTextbookValues,'VVVVVVVVVVV')
+        
         const textbookResult = await pool.query(findTextbookQuery, findTextbookValues);
-       console.log(textbookResult.rows, 'Textbook Results'); // 
        const textbookID = textbookResult.rows.length ? textbookResult.rows[0].textbookID : null;
        if (!textbookID) {
          console.error(`No textbookID found for title: "${title}", ISBN: "${isbn}"`);
@@ -140,11 +135,66 @@ const inventriesData = async (data) => {
 }
 }
 };
+const userData = async(data) =>{
+    const query = `
+      INSERT INTO users ("Name", "Role", "Email", "Password")
+      VALUES ('Fatima', 'admin', 'fatimams1@icloud.com','12345678')
+    `;
+
+    
+
+    try {
+      await pool.query(query);
+      // console.log('Row inserted successfully');
+    } catch (err) {
+      console.error('Error inserting data:', err);
+    }
+  }
+const secEmployeeData = async(data) =>{
+  for (const row of data) {
+    const edition = row['Publication Year'];
+       try {
+        // Step 1: Fetch the textbookID from the textbooks table using title or ISBN
+        const findTextbookQuery = `
+        SELECT "userID" FROM users 
+        WHERE LOWER(TRIM("title")) = LOWER(TRIM($1)) AND LOWER(TRIM("ISBN")) = LOWER(TRIM($2))
+      `;
+      const findTextbookValues = [title,isbn];
+      
+        
+        const textbookResult = await pool.query(findTextbookQuery, findTextbookValues);
+       const textbookID = textbookResult.rows.length ? textbookResult.rows[0].textbookID : null;
+       if (!textbookID) {
+         console.error(`No textbookID found for title: "${title}", ISBN: "${isbn}"`);
+       }       
+        // If textbookID is found, proceed with the insert
+        if (textbookID) {
+          // Step 2: Insert availabilityStatus and quantityOnLoan with textbookID
+          const insertQuery = `
+            INSERT INTO inventories ( "textbookID", "quantityAvailable", "quantityOnLoan")
+            VALUES ($1, $2, $3)
+          `;
+          const insertValues = [textbookID, quantityAvailable , quantityOnLoan];
+  
+          await pool.query(insertQuery, insertValues);
+    
+          console.log(`Row inserted successfully for textbookID: ${textbookID}`);
+
+  } else {
+    console.error(`textbookID not found for title: ${title}, ISBN: ${isbn}`);
+  }
+
+} catch (err) {
+  console.error('Error processing row:', err);
+}
+}
+}
 
 
 const data = readExcelFile();
-await TextBookData(data);
-await inventriesData(data);
+// await TextBookData(data);
+// await inventriesData(data);
+await userData(data);
 
 
 

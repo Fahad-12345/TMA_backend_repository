@@ -25,30 +25,26 @@ const sequelize = new Sequelize(database, username, password, {
     dialect,
 });
 
-async function runMigrations() {
-    const migrationsDir = path.join(__dirname, 'migrations'); // Point to the migrations folder
-    const migrationFiles = await fs.readdir(migrationsDir);
+async function undoSeeders() {
+    const seedersDir = path.join(__dirname, 'seeders'); // Point to the migrations folder
+    const seedersFiles = await fs.readdir(seedersDir);
 
-    for (const file of migrationFiles) {
+    // Sort files in reverse order to undo in the correct sequence
+    seedersFiles.sort().reverse();
+
+    for (const file of seedersFiles) {
         if (file.endsWith('.mjs')) {
-            const migrationPath = path.join(migrationsDir, file);
-            const { up } = await import(`file://${migrationPath}`); // Use file URL format
-            await up(sequelize.getQueryInterface(), Sequelize);
-            console.log(`Migration ${file} executed.`);
+            const seedersPath = path.join(seedersDir, file);
+            const { down } = await import(`file://${seedersPath}`); // Use file URL format
+            await down(sequelize.getQueryInterface(), Sequelize);
+            console.log(`Seeder ${file} undone.`);
         }
     }
 
     await sequelize.close();
 }
 
-runMigrations().catch((error) => {
-    console.error('Migration failed:', error);
+undoSeeders().catch((error) => {
+    console.error('Migration undo failed:', error);
     process.exit(1);
 });
-
-
-
-
-
-
-

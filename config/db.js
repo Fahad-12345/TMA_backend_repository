@@ -1,34 +1,26 @@
-import pkg from 'pg';
-const { Pool } = pkg; // Destructure Pool from the imported package
-
-// Use the JSON import assertion for the config file
+import { Sequelize } from 'sequelize';
 import config from './config.json' assert { type: 'json' };
 
 // Use the development configuration from your config file
 const { username, host, database, password } = config.development;
 
-// Create a connection pool to PostgreSQL
-const pool = new Pool({
-  user: username,
+// Create a new Sequelize instance
+const sequelize = new Sequelize(database, username, password, {
   host: host,
-  database: database,
-  password: password,
-  port: 5432,
+  dialect: 'postgres',
 });
 
+// Test the connection (optional)
+const testConnection = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Connected to the PostgreSQL database successfully!');
+  } catch (err) {
+    console.error('Connection to PostgreSQL database failed:', err);
+  }
+};
 
-// // Test the connection
-// const testConnection = async () => {
-//   try {
-//     await pool.connect();
-//     console.log('Connected to the PostgreSQL database successfully!');
-//   } catch (err) {
-//     console.error('Connection to PostgreSQL database failed:', err);
-//   } finally {
-//     await pool.end(); // Close the connection pool
-//   }
-// };
+testConnection();
 
-// testConnection();
-// Export the pool to be used in the services
-export default pool;
+// Export the Sequelize instance for use in your models
+export default sequelize;

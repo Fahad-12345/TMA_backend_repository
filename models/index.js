@@ -1,43 +1,113 @@
-'use strict';
+import { Sequelize } from 'sequelize';
+import User from './user.js'; 
+import SecEmployee from './SecEmployee.js';
+import Instructor from './Instructor.js';
+import Textbook from './Textbook.js';
+import Inventory from './Inventory.js';
+import Course from './Course.js';
+import Request from './Request.js';
 
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const process = require('process');
-const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
-
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
-
-fs
-  .readdirSync(__dirname)
-  .filter(file => {
-    return (
-      file.indexOf('.') !== 0 &&
-      file !== basename &&
-      file.slice(-3) === '.js' &&
-      file.indexOf('.test.js') === -1
-    );
-  })
-  .forEach(file => {
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    db[model.name] = model;
-  });
-
-Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
+const sequelize = new Sequelize('TMA', 'postgres', '12345', {
+  host: '127.0.0.1',
+  dialect: 'postgres',
 });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+// Define relationships
 
-module.exports = db;
+// User has one SecEmployee
+User.hasOne(SecEmployee, {
+  foreignKey: 'userID',
+  sourceKey: 'userID',
+});
+
+// SecEmployee belongs to User
+SecEmployee.belongsTo(User, {
+  foreignKey: 'userID',
+  targetKey: 'userID',
+});
+
+// User has many Requests
+User.hasMany(Request, {
+  foreignKey: 'userID',
+  sourceKey: 'userID',
+});
+
+// Request belongs to User
+Request.belongsTo(User, {
+  foreignKey: 'userID',
+  targetKey: 'userID',
+});
+
+// User has many Instructors
+User.hasMany(Instructor, {
+  foreignKey: 'userID',
+  sourceKey: 'userID',
+});
+
+// Instructor belongs to User
+Instructor.belongsTo(User, {
+  foreignKey: 'userID',
+  targetKey: 'userID',
+});
+
+// Textbook has many Inventories
+Textbook.hasMany(Inventory, {
+  foreignKey: 'textbookID',
+  sourceKey: 'textbookID',
+});
+
+// Inventory belongs to Textbook
+Inventory.belongsTo(Textbook, {
+  foreignKey: 'textbookID',
+  targetKey: 'textbookID',
+});
+
+// Textbook has many Courses
+Textbook.hasMany(Course, {
+  foreignKey: 'textbookID',
+  sourceKey: 'textbookID',
+});
+
+// Course belongs to Textbook
+Course.belongsTo(Textbook, {
+  foreignKey: 'textbookID',
+  targetKey: 'textbookID',
+});
+
+// Instructor has many Courses
+Instructor.hasMany(Course, {
+  foreignKey: 'instructorID',
+  sourceKey: 'instructorID',
+});
+
+// Course belongs to Instructor
+Course.belongsTo(Instructor, {
+  foreignKey: 'instructorID',
+  targetKey: 'instructorID',
+});
+
+// Course has many Requests
+Course.hasMany(Request, {
+  foreignKey: 'courseID', // Assuming you might have added courseID to requests
+  sourceKey: 'courseID',
+});
+
+// Request belongs to Course
+Request.belongsTo(Course, {
+  foreignKey: 'courseID', // Assuming you might have added courseID to requests
+  targetKey: 'courseID',
+});
+
+// Sync all models
+const syncModels = async () => {
+  try {
+    await sequelize.sync({ force: false }); // Change to true to recreate tables
+    console.log('Models synchronized successfully!');
+  } catch (error) {
+    console.error('Error syncing models:', error);
+  }
+};
+
+syncModels();
+
+export { sequelize, User, SecEmployee, Instructor, Textbook, Inventory, Course, Request };

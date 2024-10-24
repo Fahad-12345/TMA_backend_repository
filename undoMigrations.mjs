@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const config = {
     development: {
-        username: "fahad",
+        username: "postgres",
         password: "12345",
         database: "TMA",
         host: "127.0.0.1",
