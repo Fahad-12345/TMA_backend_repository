@@ -1,8 +1,10 @@
 import Instructor from '../models/Instructor.js';  // Make sure the Instructor model is defined
 import Course from '../models/Course.js';          // Make sure the Course model is defined
 
+
+export class instructorService {
 // Add a course for an instructor
-export const addCourse = async (instructorID, courseID) => {
+addCourse = async (instructorID, courseID) => {
     try {
         const instructor = await Instructor.findOne({ where: { instructorID } });
         if (!instructor) throw new Error('Instructor not found');
@@ -19,7 +21,7 @@ export const addCourse = async (instructorID, courseID) => {
 };
 
 // Drop a course for an instructor
-export const dropCourse = async (instructorID, courseID) => {
+ dropCourse = async (instructorID, courseID) => {
     try {
         const instructor = await Instructor.findOne({ where: { instructorID } });
         if (!instructor) throw new Error('Instructor not found');
@@ -33,4 +35,5 @@ export const dropCourse = async (instructorID, courseID) => {
     } catch (error) {
         throw new Error('Error dropping course: ' + error.message);
     }
-};
+}
+}

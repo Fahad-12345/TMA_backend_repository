@@ -1,42 +1,48 @@
-import * as textbookService from '../services/textbookService.js';
+import { textbookService } from "../services/textbookService.js";
 
-export const add = async (req, res) => {
+export class textbookController {
+    constructor(){
+        this.textbookService = new textbookService()
+    }
+
+ add = async (req, res) => {
     try {
-        const newTextbook = await textbookService.add(req.body);
+        const newTextbook = await this.textbookService.add(req.body);
         res.status(201).json(newTextbook);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-export const remove = async (req, res) => {
+remove = async (req, res) => {
     try {
         const { bookID } = req.params;
-        const result = await textbookService.remove(bookID);
+        const result = await this.textbookService.remove(bookID);
         res.status(200).json(result);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-export const setStatus = async (req, res) => {
+ setStatus = async (req, res) => {
     try {
         const { bookID } = req.params;
         const { status } = req.body;
-        const updatedTextbook = await textbookService.setStatus(bookID, status);
+        const updatedTextbook = await this.textbookService.setStatus(bookID, status);
         res.status(200).json(updatedTextbook);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-export const updateStatus = async (req, res) => {
+ updateStatus = async (req, res) => {
     try {
         const { bookID } = req.params;
         const { status } = req.body;
-        const updatedTextbook = await textbookService.updateStatus(bookID, status);
+        const updatedTextbook = await this.textbookService.updateStatus(bookID, status);
         res.status(200).json(updatedTextbook);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-};
+}
+}

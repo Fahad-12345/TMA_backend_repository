@@ -1,12 +1,16 @@
-import * as courseService from '../services/courseService.js';
+import { courseService } from "../services/courseService.js";
 
+export class courseController {
+  constructor(){
+    this.courseServc = new courseService();
+  }
 // Assign a book to a course
-export const assignBook = async (req, res) => {
+ assignBook = async (req, res) => {
     try {
         const { courseID } = req.params;
         const { bookID } = req.body;
 
-        const updatedCourse = await courseService.assignBook(courseID, bookID);
+        const updatedCourse = await this.courseServc.assignBook(courseID, bookID);
         res.status(200).json(updatedCourse);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -14,13 +18,14 @@ export const assignBook = async (req, res) => {
 };
 
 // Retrieve the assigned book for a course
-export const retrieveBook = async (req, res) => {
+ retrieveBook = async (req, res) => {
     try {
         const { courseID } = req.params;
 
-        const assignedBook = await courseService.retrieveBook(courseID);
+        const assignedBook = await this.courseServc.retrieveBook(courseID);
         res.status(200).json(assignedBook);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-};
+}
+}

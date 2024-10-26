@@ -1,7 +1,9 @@
-import { Request } from "../models";
+import  Request  from "../models/Request.js";
 
+
+export class requestService {
 // Create a new request
-export const createRequest = async (requestData) => {
+ createRequest = async (requestData) => {
     try {
         const newRequest = await Request.create(requestData);
         return newRequest;
@@ -11,7 +13,7 @@ export const createRequest = async (requestData) => {
 };
 
 // Update a request's details
-export const updateRequest = async (requestID, updates) => {
+ updateRequest = async (requestID, updates) => {
     try {
         const request = await Request.findOne({ where: { requestID } });
         if (!request) throw new Error('Request not found');
@@ -24,7 +26,7 @@ export const updateRequest = async (requestID, updates) => {
 };
 
 // Approve a request
-export const approveRequest = async (requestID) => {
+ approveRequest = async (requestID) => {
     try {
         const request = await Request.findOne({ where: { requestID } });
         if (!request) throw new Error('Request not found');
@@ -38,7 +40,7 @@ export const approveRequest = async (requestID) => {
 };
 
 // Deny a request
-export const denyRequest = async (requestID) => {
+ denyRequest = async (requestID) => {
     try {
         const request = await Request.findOne({ where: { requestID } });
         if (!request) throw new Error('Request not found');
@@ -49,4 +51,5 @@ export const denyRequest = async (requestID) => {
     } catch (error) {
         throw new Error('Error denying request: ' + error.message);
     }
-};
+}
+}

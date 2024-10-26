@@ -1,14 +1,20 @@
-import * as inventoryService from '../services/inventoryService.js';
+import { inventoriesService } from "../services/inventoriesService.js";
+export class inventoriesController {
+    constructor() {
+        this.invService = new inventoriesService
+    }
 
-export const updateInventory = async (req, res) => {
+
+ updateInventory = async (req, res) => {
     try {
         const { textbookID } = req.params;
         const updates = req.body;
 
         // Call the service to update the inventory
-        const updatedInventory = await inventoryService.updateInventory(textbookID, updates);
+        const updatedInventory = await this.invService.updateInventory(textbookID, updates);
         res.status(200).json(updatedInventory);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-};
+}
+}

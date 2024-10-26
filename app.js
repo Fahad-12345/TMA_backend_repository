@@ -1,10 +1,24 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+// routes
 import UserRouter from './routes/userRoutes.js'; 
+import TextBookrouter from './routes/textbookRoute.js';
+import secEmprouter from './routes/sec_employeeRoute.js';
+import Reqrouter from './routes/requestRoute.js';
+import InventoryRouter from './routes/inventoriesRoute.js';
+import InstructorRouter from './routes/instructorRoute.js';
+import CourseRouter from './routes/courseRoute.js';
+
 const app = express();
 app.use(bodyParser.json());
 
 app.use('/api/users', UserRouter);
+app.use('/api/textbooks', TextBookrouter);
+app.use('/api/secEmployee', secEmprouter);
+app.use('/api/requests', Reqrouter);
+app.use('/api/inventories', InventoryRouter);
+app.use('/api/instructors', InstructorRouter);
+app.use('/api/courses', CourseRouter);
 
 // Other middleware and route configurations
 

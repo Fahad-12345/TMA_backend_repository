@@ -1,9 +1,10 @@
-import express from 'express';
-import { updateInventory } from '../controllers/inventoryController.js';
+import { Router } from 'express';
+import { inventoriesController } from '../controllers/inventoriesController.js';
 
-const router = express.Router();
+const InventoryRouter = Router();
+const invController = new inventoriesController(); 
 
 // Update inventory by textbookID
-router.put('/:textbookID', updateInventory);
+InventoryRouter.put('/:textbookID', invController.updateInventory);
 
-export default router;
+export default InventoryRouter;

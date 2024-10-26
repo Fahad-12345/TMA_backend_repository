@@ -1,12 +1,13 @@
 import express from 'express';
-import { addCourse, dropCourse } from '../controllers/instructorController.js';
+import { instructorController } from '../controllers/instructorController.js';
 
-const router = express.Router();
+const InstructorRouter = express.Router();
+const insController = new instructorController()
 
 // Add a course to an instructor by instructorID
-router.put('/:instructorID/add-course', addCourse);
+InstructorRouter.put('/:instructorID/add-course', insController.addCourse);
 
 // Drop a course from an instructor by instructorID
-router.delete('/:instructorID/drop-course', dropCourse);
+InstructorRouter.delete('/:instructorID/drop-course', insController.dropCourse);
 
-export default router;
+export default InstructorRouter;

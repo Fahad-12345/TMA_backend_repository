@@ -1,12 +1,13 @@
 import express from 'express';
-import { assignBook, retrieveBook } from '../controllers/courseController.js';
+import { courseController } from '../controllers/coursesController.js';
 
-const router = express.Router();
+const CourseRouter = express.Router();
+const courseControll = new courseController();
 
 // Assign a book to a course by courseID
-router.put('/:courseID/assign', assignBook);
+CourseRouter.put('/:courseID/assign', courseControll.assignBook);
 
 // Retrieve the assigned book for a course by courseID
-router.get('/:courseID/book', retrieveBook);
+CourseRouter.get('/:courseID/book', courseControll.retrieveBook);
 
-export default router;
+export default CourseRouter;

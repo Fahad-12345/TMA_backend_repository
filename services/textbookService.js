@@ -1,7 +1,8 @@
-import { Textbook } from "../models";
+import  Textbook  from "../models/Textbook.js";
 
+export class textbookService {
 // Add a new textbook
-export const add = async (textbookData) => {
+ add = async (textbookData) => {
     try {
         const newTextbook = await Textbook.create(textbookData);
         return newTextbook;
@@ -11,7 +12,7 @@ export const add = async (textbookData) => {
 };
 
 // Remove a textbook by bookID
-export const remove = async (bookID) => {
+ remove = async (bookID) => {
     try {
         const deletedTextbook = await Textbook.destroy({ where: { bookID } });
         if (!deletedTextbook) throw new Error('Textbook not found');
@@ -22,7 +23,7 @@ export const remove = async (bookID) => {
 };
 
 // Set the availability status of a textbook
-export const setStatus = async (bookID, status) => {
+ setStatus = async (bookID, status) => {
     try {
         const textbook = await Textbook.findByPk(bookID);
         if (!textbook) throw new Error('Textbook not found');
@@ -35,7 +36,7 @@ export const setStatus = async (bookID, status) => {
 };
 
 // Update the availability status of a textbook
-export const updateStatus = async (bookID, status) => {
+ updateStatus = async (bookID, status) => {
     try {
         const textbook = await Textbook.findByPk(bookID);
         if (!textbook) throw new Error('Textbook not found');
@@ -45,4 +46,5 @@ export const updateStatus = async (bookID, status) => {
     } catch (error) {
         throw new Error('Error updating status: ' + error.message);
     }
-};
+}
+}

@@ -1,12 +1,13 @@
 import express from 'express';
-import { addCourse, removeCourse } from '../controllers/secEmployeeController.js';
+import { secEmployeeController } from '../controllers/sec_employeesController.js';
 
-const router = express.Router();
+const secEmprouter = express.Router();
+const secEmployeeControl = new secEmployeeController()
 
 // Add a course to a security employee by employeeID
-router.put('/:employeeID/add-course', addCourse);
+secEmprouter.put('/:employeeID/add-course', secEmployeeControl.addCourse);
 
 // Remove a course from a security employee by employeeID
-router.delete('/:employeeID/remove-course', removeCourse);
+secEmprouter.delete('/:employeeID/remove-course', secEmployeeControl.removeCourse);
 
-export default router;
+export default secEmprouter;

@@ -1,5 +1,5 @@
 import { UserService } from "../services/userService.js";
-import User from "../models/User.js";
+import User from "../models/user.js";
 export class UserController {
     constructor() {
         this.userService = new UserService(); 

@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../config/db';
+import sequelize from '../config/db.js';
 import User from './user.js'; // Adjust the path based on your folder structure
 
 const SecEmployee = sequelize.define('SecEmployee', {

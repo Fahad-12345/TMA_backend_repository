@@ -1,7 +1,10 @@
-import { Inventory } from "../models";
+import  Inventory  from "../models/Inventory.js";
 
-// Update inventory quantities
-export const updateInventory = async (textbookID, updates) => {
+
+
+export class inventoriesService {
+
+ updateInventory = async (textbookID, updates) => {
     try {
         const inventory = await Inventory.findOne({ where: { textbookID } });
         if (!inventory) throw new Error('Inventory record not found');
@@ -12,4 +15,5 @@ export const updateInventory = async (textbookID, updates) => {
     } catch (error) {
         throw new Error('Error updating inventory: ' + error.message);
     }
-};
+}
+}

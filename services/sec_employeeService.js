@@ -1,8 +1,10 @@
 import SecEmployee from '../models/SecEmployee.js';  // Assuming SecEmployee model is defined
 import Course from '../models/Course.js';          // Assuming Course model is defined
 
+
+export class secEmployeesService {
 // Add a course for a security employee
-export const addCourse = async (employeeID, courseID) => {
+ addCourse = async (employeeID, courseID) => {
     try {
         const employee = await SecEmployee.findOne({ where: { employeeID } });
         if (!employee) throw new Error('Employee not found');
@@ -19,7 +21,7 @@ export const addCourse = async (employeeID, courseID) => {
 };
 
 // Remove a course from a security employee
-export const removeCourse = async (employeeID, courseID) => {
+ removeCourse = async (employeeID, courseID) => {
     try {
         const employee = await SecEmployee.findOne({ where: { employeeID } });
         if (!employee) throw new Error('Employee not found');
@@ -33,4 +35,5 @@ export const removeCourse = async (employeeID, courseID) => {
     } catch (error) {
         throw new Error('Error removing course: ' + error.message);
     }
-};
+}
+}

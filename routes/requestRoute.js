@@ -1,18 +1,19 @@
 import express from 'express';
-import { createRequest, updateRequest, approveRequest, denyRequest } from '../controllers/requestController.js';
+import { requestController } from '../controllers/requestsController.js';
 
-const router = express.Router();
+const Reqrouter = express.Router();
+const reqController = new requestController();
 
 // Create a new request
-router.post('/', createRequest);
+Reqrouter.post('/', reqController.createRequest);
 
 // Update an existing request
-router.put('/:requestID', updateRequest);
+Reqrouter.put('/:requestID', reqController.updateRequest);
 
 // Approve a request
-router.put('/:requestID/approve', approveRequest);
+Reqrouter.put('/:requestID/approve', reqController.approveRequest);
 
 // Deny a request
-router.put('/:requestID/deny', denyRequest);
+Reqrouter.put('/:requestID/deny', reqController.denyRequest);
 
-export default router;
+export default Reqrouter;
