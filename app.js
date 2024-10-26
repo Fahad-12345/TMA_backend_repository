@@ -1,16 +1,14 @@
-import dotenv from 'dotenv';
-dotenv.config();
 import express from 'express';
-import userRoutes from './routes/userRoutes.js';
-
+import bodyParser from 'body-parser';
+import UserRouter from './routes/userRoutes.js'; 
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.use(bodyParser.json());
 
-app.use(express.json());
+app.use('/api/users', UserRouter);
 
-// Use your user routes
-app.use('/users', userRoutes);
+// Other middleware and route configurations
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });
+

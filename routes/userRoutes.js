@@ -1,11 +1,13 @@
 import { Router } from 'express';
-import { getAllUsers, createUser } from '../controllers/userController.js'; 
+import { UserController } from '../controllers/userController.js';
+import authenticateToken  from '../middleware/authMiddleware.js';
 
-const router = Router();
+const userRouter = Router();
+const userController = new UserController(); 
 
-// Define user routes
-router.get('/', getAllUsers);
-router.post('/', createUser);
+userRouter.post('/register', userController.register);
+userRouter.post('/login', userController.login);
+userRouter.post('/logout', userController.logout);
+userRouter.put('/updateProfile', authenticateToken, userController.updateProfile);
 
-export default router;
-
+export default userRouter; 

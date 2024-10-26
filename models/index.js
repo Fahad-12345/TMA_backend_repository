@@ -88,13 +88,13 @@ Course.belongsTo(Instructor, {
 
 // Course has many Requests
 Course.hasMany(Request, {
-  foreignKey: 'courseID', // Assuming you might have added courseID to requests
+  foreignKey: 'courseID', 
   sourceKey: 'courseID',
 });
 
 // Request belongs to Course
 Request.belongsTo(Course, {
-  foreignKey: 'courseID', // Assuming you might have added courseID to requests
+  foreignKey: 'courseID', 
   targetKey: 'courseID',
 });
 
