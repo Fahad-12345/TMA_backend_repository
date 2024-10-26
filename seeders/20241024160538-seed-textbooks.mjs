@@ -2,7 +2,7 @@
 export const up = async (queryInterface, Sequelize) => {
   await queryInterface.bulkInsert('textbooks', [
     {
-      title: 'Introduction to Algorithms',
+      textBooktitle: 'Introduction to Algorithms',
       author: 'Thomas H. Cormen',
       ISBN: '978-0262033848',
       edition: 3,
@@ -11,7 +11,7 @@ export const up = async (queryInterface, Sequelize) => {
       updatedAt: new Date(),
     },
     {
-      title: 'Clean Code',
+      textBooktitle: 'Clean Code',
       author: 'Robert C. Martin',
       ISBN: '978-0136083238',
       edition: 1,
@@ -20,7 +20,7 @@ export const up = async (queryInterface, Sequelize) => {
       updatedAt: new Date(),
     },
     {
-      title: 'The Pragmatic Programmer',
+      textBooktitle: 'The Pragmatic Programmer',
       author: 'Andrew Hunt',
       ISBN: '978-0135957059',
       edition: 20,
@@ -29,7 +29,7 @@ export const up = async (queryInterface, Sequelize) => {
       updatedAt: new Date(),
     },
     {
-      title: 'You Don’t Know JS',
+      textBooktitle: 'You Don’t Know JS',
       author: 'Kyle Simpson',
       ISBN: '978-1491950296',
       edition: 2,

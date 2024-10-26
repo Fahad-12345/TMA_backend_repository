@@ -1,42 +1,72 @@
-import { DataTypes } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 
-const Request = sequelize.define('Request', {
-    requestID: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false, // Adjust based on your requirements
-    },
-    userID: {
-        type: DataTypes.INTEGER,
-        allowNull: true, // Adjust based on whether this is mandatory
-        references: {
-            model: 'User', // This should match the name of the User model
-            key: 'userID',
+class Request extends Model {
+    static associate(models) {
+        // Define relationships here
+
+        // Request belongs to User
+        Request.belongsTo(models.User, {
+            foreignKey: 'userID',
+            targetKey: 'userID',
+        });
+
+        // Request belongs to Course
+        Request.belongsTo(models.Course, {
+            foreignKey: 'courseID',
+            targetKey: 'courseID',
+        });
+
+        // Request belongs to Textbook
+        Request.belongsTo(models.Textbook, {
+            foreignKey: 'textbookID',
+            targetKey: 'textbookID',
+        });
+    }
+}
+
+// Initialize model schema with init
+Request.init(
+    {
+        requestID: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false,
+        },
+        userID: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'User',
+                key: 'userID',
+            },
+        },
+        textbookID: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'Textbook',
+                key: 'textbookID',
+            },
+        },
+        date: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        status: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
     },
-    textbookID: {
-        type: DataTypes.INTEGER,
-        allowNull: true, // Adjust based on whether this is mandatory
-        references: {
-            model: 'Textbook', // This should match the name of the Textbook model
-            key: 'textbookID',
-        },
-    },
-    date: {
-        type: DataTypes.DATE,
-        allowNull: true, // Adjust as necessary
-    },
-    status: {
-        type: DataTypes.STRING,
-        allowNull: true, // Adjust as necessary
-    },
-}, {
-    tableName: 'requests',
-    timestamps: true,
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-});
+    {
+        sequelize,
+        modelName: 'Request',
+        tableName: 'requests',
+        timestamps: true,
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt',
+    }
+);
 
 export default Request;

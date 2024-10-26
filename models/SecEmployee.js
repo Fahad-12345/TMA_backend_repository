@@ -1,36 +1,60 @@
-import { DataTypes } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
-import User from './user.js'; // Adjust the path based on your folder structure
 
-const SecEmployee = sequelize.define('SecEmployee', {
-    employeeID: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
-    },
-    userID: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: User, // Reference to the User model
-            key: 'userID',
+class SecEmployee extends Model {
+    static associate(models) {
+        // Define relationships here
+
+        // SecEmployee belongs to User
+        SecEmployee.belongsTo(models.User, {
+            foreignKey: 'userID',
+            targetKey: 'userID',
+        });
+
+        // SecEmployee belongs to many Courses (many-to-many relationship through EmployeeCourses)
+        SecEmployee.belongsToMany(models.Course, {
+            through: 'EmployeeCourses',
+            foreignKey: 'employeeID',
+            otherKey: 'courseID',
+        });
+    }
+}
+
+// Initialize model schema with init
+SecEmployee.init(
+    {
+        employeeID: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false,
+        },
+        userID: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'User', // Reference to the User model
+                key: 'userID',
+            },
+        },
+        enrollmentYear: {
+            type: DataTypes.INTEGER,
+        },
+        department: {
+            type: DataTypes.STRING,
+        },
+        coursesTaught: {
+            type: DataTypes.STRING,
         },
     },
-    enrollmentYear: {
-        type: DataTypes.INTEGER,
-    },
-}, {
-    tableName: 'sec_employees',
-    timestamps: true,
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-});
-
-// Establishing the relationship with User
-SecEmployee.belongsTo(User, {
-    foreignKey: 'userID',
-    as: 'user', // Alias for easier access
-});
+    {
+        sequelize,
+        modelName: 'SecEmployee',
+        tableName: 'sec_employees',
+        timestamps: true,
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt',
+    }
+);
 
 export default SecEmployee;

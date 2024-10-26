@@ -3,10 +3,12 @@ import { DataTypes, Sequelize } from 'sequelize';
 export const up = async (queryInterface) => {
   await queryInterface.createTable('courses', {
     courseID: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
+      autoIncrement: true, 
     },
-    title: {
+    courseName: {
       type: DataTypes.STRING,
     },
     textbookID: {
@@ -23,6 +25,13 @@ export const up = async (queryInterface) => {
         key: 'instructorID',
       },
     },
+    sec_Employee_ID: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'sec_employees', 
+          key: 'employeeID',
+      },
+  },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,

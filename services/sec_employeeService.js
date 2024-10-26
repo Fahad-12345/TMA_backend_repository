@@ -4,7 +4,7 @@ import Course from '../models/Course.js';          // Assuming Course model is d
 
 export class secEmployeesService {
 // Add a course for a security employee
- addCourse = async (employeeID, courseID) => {
+addCourse = async (employeeID, courseID) => {
     try {
         const employee = await SecEmployee.findOne({ where: { employeeID } });
         if (!employee) throw new Error('Employee not found');
@@ -12,8 +12,10 @@ export class secEmployeesService {
         const course = await Course.findOne({ where: { courseID } });
         if (!course) throw new Error('Course not found');
 
-        // Assuming a many-to-many relationship between sec_employee and courses
-        await employee.addCourse(course);  // Requires Sequelize association setup
+        // Update the course to associate it with the employee
+        course.sec_Employee_ID = employeeID;  // Associate the employee with the course
+        await course.save();  // Save the updated course
+
         return { message: 'Course added to security employee successfully' };
     } catch (error) {
         throw new Error('Error adding course: ' + error.message);
@@ -21,19 +23,21 @@ export class secEmployeesService {
 };
 
 // Remove a course from a security employee
- removeCourse = async (employeeID, courseID) => {
+removeCourse = async (employeeID, courseID) => {
     try {
         const employee = await SecEmployee.findOne({ where: { employeeID } });
         if (!employee) throw new Error('Employee not found');
 
-        const course = await Course.findOne({ where: { courseID } });
-        if (!course) throw new Error('Course not found');
+        const course = await Course.findOne({ where: { courseID, sec_Employee_ID: employeeID } });
+        if (!course) throw new Error('Course not found or not associated with this employee');
 
-        // Remove the course association with the security employee
-        await employee.removeCourse(course);  // Also requires Sequelize association
+        // Remove the employee association from the course
+        course.sec_Employee_ID = null;  
+        await course.save();  // Save the updated course
+
         return { message: 'Course removed from security employee successfully' };
     } catch (error) {
         throw new Error('Error removing course: ' + error.message);
     }
-}
+};
 }

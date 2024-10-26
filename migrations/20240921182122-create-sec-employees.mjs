@@ -19,6 +19,12 @@ export const up = async (queryInterface) => {
     enrollmentYear: {
       type: DataTypes.INTEGER,
     },
+    department:{
+      type: DataTypes.STRING
+  },
+  coursesTaught:{
+      type: DataTypes.STRING
+  },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,

@@ -6,24 +6,32 @@ export const up = async (queryInterface, Sequelize) => {
     {
       userID: 1, // Assuming user with ID 1 exists
       enrollmentYear: 2022,
+      department: 'CS',
+      coursesTaught:'data science,AI',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       userID: 2, // Assuming user with ID 2 exists
       enrollmentYear: 2021,
+      department: 'CS',
+      coursesTaught:'machine learning,web 2.0',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       userID: 3, // Assuming user with ID 3 exists
       enrollmentYear: 2023,
+      department: 'CS',
+      coursesTaught:'data structure,OOP',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       userID: 4, // Assuming user with ID 4 exists
       enrollmentYear: 2020,
+      department: 'CS',
+      coursesTaught:'data science,AI',
       createdAt: new Date(),
       updatedAt: new Date(),
     },

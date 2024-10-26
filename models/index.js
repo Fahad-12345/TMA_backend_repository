@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
-import User from './user.js'; 
+import User from './User.js';
 import SecEmployee from './SecEmployee.js';
 import Instructor from './Instructor.js';
 import Textbook from './Textbook.js';
@@ -7,96 +7,31 @@ import Inventory from './Inventory.js';
 import Course from './Course.js';
 import Request from './Request.js';
 
+// Initialize Sequelize
 const sequelize = new Sequelize('TMA', 'postgres', '12345', {
   host: '127.0.0.1',
   dialect: 'postgres',
 });
 
+// Initialize models
+const models = {
+  User: User.init(sequelize, Sequelize.DataTypes),
+  SecEmployee: SecEmployee.init(sequelize, Sequelize.DataTypes),
+  Instructor: Instructor.init(sequelize, Sequelize.DataTypes),
+  Textbook: Textbook.init(sequelize, Sequelize.DataTypes),
+  Inventory: Inventory.init(sequelize, Sequelize.DataTypes),
+  Course: Course.init(sequelize, Sequelize.DataTypes),
+  Request: Request.init(sequelize, Sequelize.DataTypes),
+};
+
 // Define relationships
-
-// User has one SecEmployee
-User.hasOne(SecEmployee, {
-  foreignKey: 'userID',
-  sourceKey: 'userID',
-});
-
-// SecEmployee belongs to User
-SecEmployee.belongsTo(User, {
-  foreignKey: 'userID',
-  targetKey: 'userID',
-});
-
-// User has many Requests
-User.hasMany(Request, {
-  foreignKey: 'userID',
-  sourceKey: 'userID',
-});
-
-// Request belongs to User
-Request.belongsTo(User, {
-  foreignKey: 'userID',
-  targetKey: 'userID',
-});
-
-// User has many Instructors
-User.hasMany(Instructor, {
-  foreignKey: 'userID',
-  sourceKey: 'userID',
-});
-
-// Instructor belongs to User
-Instructor.belongsTo(User, {
-  foreignKey: 'userID',
-  targetKey: 'userID',
-});
-
-// Textbook has many Inventories
-Textbook.hasMany(Inventory, {
-  foreignKey: 'textbookID',
-  sourceKey: 'textbookID',
-});
-
-// Inventory belongs to Textbook
-Inventory.belongsTo(Textbook, {
-  foreignKey: 'textbookID',
-  targetKey: 'textbookID',
-});
-
-// Textbook has many Courses
-Textbook.hasMany(Course, {
-  foreignKey: 'textbookID',
-  sourceKey: 'textbookID',
-});
-
-// Course belongs to Textbook
-Course.belongsTo(Textbook, {
-  foreignKey: 'textbookID',
-  targetKey: 'textbookID',
-});
-
-// Instructor has many Courses
-Instructor.hasMany(Course, {
-  foreignKey: 'instructorID',
-  sourceKey: 'instructorID',
-});
-
-// Course belongs to Instructor
-Course.belongsTo(Instructor, {
-  foreignKey: 'instructorID',
-  targetKey: 'instructorID',
-});
-
-// Course has many Requests
-Course.hasMany(Request, {
-  foreignKey: 'courseID', 
-  sourceKey: 'courseID',
-});
-
-// Request belongs to Course
-Request.belongsTo(Course, {
-  foreignKey: 'courseID', 
-  targetKey: 'courseID',
-});
+User.associate(models);
+SecEmployee.associate(models);
+Instructor.associate(models);
+Textbook.associate(models);
+Inventory.associate(models);
+Course.associate(models);
+Request.associate(models);
 
 // Sync all models
 const syncModels = async () => {

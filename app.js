@@ -12,13 +12,13 @@ import CourseRouter from './routes/courseRoute.js';
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/api/users', UserRouter);
-app.use('/api/textbooks', TextBookrouter);
-app.use('/api/secEmployee', secEmprouter);
+// app.use('/api/users', UserRouter);
+// app.use('/api/textbooks', TextBookrouter);
+// app.use('/api/secEmployee', secEmprouter);
 app.use('/api/requests', Reqrouter);
-app.use('/api/inventories', InventoryRouter);
-app.use('/api/instructors', InstructorRouter);
-app.use('/api/courses', CourseRouter);
+// app.use('/api/inventories', InventoryRouter);
+// app.use('/api/instructors', InstructorRouter);
+// app.use('/api/courses', CourseRouter);
 
 // Other middleware and route configurations
 

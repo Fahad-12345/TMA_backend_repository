@@ -7,7 +7,7 @@ export const up = async (queryInterface) => {
       primaryKey: true,
       autoIncrement: true, 
     },
-    title: {
+    textBooktitle: {
       type: DataTypes.STRING,
     },
     author: {

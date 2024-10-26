@@ -1,39 +1,57 @@
-import Instructor from '../models/Instructor.js';  // Make sure the Instructor model is defined
-import Course from '../models/Course.js';          // Make sure the Course model is defined
+
+import sequelize from "../config/db.js";
 
 
 export class instructorService {
 // Add a course for an instructor
-addCourse = async (instructorID, courseID) => {
+addCourse = async ({ courseName, textbookID, instructorID }) => {
     try {
-        const instructor = await Instructor.findOne({ where: { instructorID } });
-        if (!instructor) throw new Error('Instructor not found');
+        // Check if the instructor exists
+        const instructorCheckQuery = `SELECT * FROM instructors WHERE "instructorID" = ${instructorID}`;
+        const [instructorCheckResult] = await sequelize.query(instructorCheckQuery);
 
-        const course = await Course.findOne({ where: { courseID } });
-        if (!course) throw new Error('Course not found');
+        if (instructorCheckResult.length === 0) {
+            return { success: false, message: 'Instructor not found' };
+        }
 
-        // Assuming a many-to-many relationship, associate instructor with course
-        await instructor.addCourse(course);  // This method requires Sequelize association setup
-        return { message: 'Course added to instructor successfully' };
+        // Insert the new course
+        const insertCourseQuery = `
+            INSERT INTO courses ("courseName", "textbookID", "instructorID")
+            VALUES ('${courseName}', ${textbookID}, ${instructorID})`;
+
+      const result =  await sequelize.query(insertCourseQuery);
+if(result){
+        return { success: true, message: 'Course added successfully' };
+}
     } catch (error) {
+        console.error('Error adding course:', error);
         throw new Error('Error adding course: ' + error.message);
     }
 };
 
-// Drop a course for an instructor
- dropCourse = async (instructorID, courseID) => {
+
+
+dropCourse = async ({ instructorID, courseID }) => {
+
     try {
-        const instructor = await Instructor.findOne({ where: { instructorID } });
-        if (!instructor) throw new Error('Instructor not found');
+        // Delete the specific course assignment for the instructor
+        const query = `
+            DELETE FROM courses
+            WHERE "courseID" = $1 AND "instructorID" = $2
+            RETURNING *;
+        `;
 
-        const course = await Course.findOne({ where: { courseID } });
-        if (!course) throw new Error('Course not found');
-
-        // Remove the course association with the instructor
-        await instructor.removeCourse(course);  // This method also requires Sequelize association
-        return { message: 'Course removed from instructor successfully' };
-    } catch (error) {
-        throw new Error('Error dropping course: ' + error.message);
-    }
+        // Execute the query and pass the courseID and instructorID as parameters
+        const result = await sequelize.query(query, {
+            bind: [courseID, instructorID],
+            type: sequelize.QueryTypes.DELETE,
+        });
+if(result){
+        return { success: true, message: 'Course deleted successfully' };
 }
+    } catch (error) {
+        console.error('Error adding course:', error);
+        throw new Error('Error adding course: ' + error.message);
+    }
+};
 }

@@ -12,9 +12,9 @@ export class textbookService {
 };
 
 // Remove a textbook by bookID
- remove = async (bookID) => {
+ remove = async (textbookID) => {
     try {
-        const deletedTextbook = await Textbook.destroy({ where: { bookID } });
+        const deletedTextbook = await Textbook.destroy({ where: { textbookID } });
         if (!deletedTextbook) throw new Error('Textbook not found');
         return { message: 'Textbook removed successfully' };
     } catch (error) {

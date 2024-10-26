@@ -1,37 +1,84 @@
-import { DataTypes } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
+import Textbook from './Textbook.js';
 
-const Course = sequelize.define('Course', {
-    courseID: {
-        type: DataTypes.STRING,
-        primaryKey: true,
-        allowNull: false, // Adjust based on your requirements
-    },
-    title: {
-        type: DataTypes.STRING,
-        allowNull: true, // Adjust as necessary
-    },
-    textbookID: {
-        type: DataTypes.INTEGER,
-        allowNull: true, // Adjust based on whether this is mandatory
-        references: {
-            model: 'Textbook', // This should match the name of the Textbook model
-            key: 'textbookID',
+
+class Course extends Model {
+    static associate(models) {
+        // Define relationships here
+
+        // Course belongs to Textbook
+        Course.belongsTo(models.Textbook, {
+            foreignKey: 'textbookID',
+            targetKey: 'textbookID',
+            as: 'textbook'
+        });
+
+        // Course belongs to Instructor
+        Course.belongsTo(models.Instructor, {
+            foreignKey: 'instructorID',
+            targetKey: 'instructorID',
+        });
+
+        // Course belongs to SecEmployee
+        Course.belongsTo(models.SecEmployee, {
+            foreignKey: 'sec_Employee_ID',
+            targetKey: 'employeeID',
+        });
+
+        // Course has many Requests
+        Course.hasMany(models.Request, {
+            foreignKey: 'courseID',
+            sourceKey: 'courseID',
+        });
+    }
+}
+
+// Initialize model schema with init
+Course.init(
+    {
+        courseID: {
+            type: DataTypes.STRING,
+            primaryKey: true,
+            allowNull: false,
+        },
+        courseName: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        textbookID: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: Textbook,
+                key: 'textbookID',
+            },
+        },
+        instructorID: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'Instructor',
+                key: 'instructorID',
+            },
+        },
+        sec_Employee_ID: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'SecEmployee',
+                key: 'employeeID',
+            },
         },
     },
-    instructorID: {
-        type: DataTypes.INTEGER,
-        allowNull: true, // Adjust based on whether this is mandatory
-        references: {
-            model: 'Instructor', // This should match the name of the Instructor model
-            key: 'instructorID',
-        },
-    },
-}, {
-    tableName: 'courses',
-    timestamps: true,
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-});
+    {
+        sequelize,
+        modelName: 'Course',
+        tableName: 'courses',
+        timestamps: true,
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt',
+    }
+);
 
 export default Course;
