@@ -25,6 +25,42 @@ export const up = async (queryInterface, Sequelize) => {
       createdAt: new Date(),
       updatedAt: new Date(),
     },
+    {
+      userID: 5, // Assuming user with ID 5 exists
+      department: 'Chemistry',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      userID: 6, // Assuming user with ID 6 exists
+      department: 'Engineering',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      userID: 7, // Assuming user with ID 7 exists
+      department: 'Economics',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      userID: 8, // Assuming user with ID 8 exists
+      department: 'Literature',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      userID: 9, // Assuming user with ID 9 exists
+      department: 'Political Science',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      userID: 10, // Assuming user with ID 10 exists
+      department: 'History',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
   ], {});
 };
 
@@ -39,11 +75,9 @@ export const down = async (queryInterface, Sequelize) => {
   `);
 
   if (parseInt(sequenceExists[0][0].count) > 0) {
-    // Reset the sequence for userID to start from 1 again
+    // Reset the sequence for instructorID to start from 1 again
     await queryInterface.sequelize.query('ALTER SEQUENCE "instructors_instructorID_seq" RESTART WITH 1;');
   } else {
     console.log('Sequence instructors_instructorID_seq does not exist.');
   }
-
-
 };

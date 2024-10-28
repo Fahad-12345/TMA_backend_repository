@@ -41,11 +41,26 @@ Course.init(
             type: DataTypes.STRING,
             primaryKey: true,
             allowNull: false,
+            autoIncrement:true
         },
         courseName: {
             type: DataTypes.STRING,
             allowNull: true,
         },
+        courseCode: {
+            type: DataTypes.STRING(20),
+            allowNull: false,
+            unique: true,
+          },
+          description: {
+            type: DataTypes.TEXT,
+          },
+          semester: {
+            type: DataTypes.STRING(10),
+          },
+          year: {
+            type: DataTypes.INTEGER,
+          },
         textbookID: {
             type: DataTypes.INTEGER,
             allowNull: true,

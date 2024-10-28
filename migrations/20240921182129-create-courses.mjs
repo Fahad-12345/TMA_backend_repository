@@ -11,6 +11,20 @@ export const up = async (queryInterface) => {
     courseName: {
       type: DataTypes.STRING,
     },
+    courseCode: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+      unique: true,
+    },
+    description: {
+      type: DataTypes.TEXT,
+    },
+    semester: {
+      type: DataTypes.STRING(10),
+    },
+    year: {
+      type: DataTypes.INTEGER,
+    },
     textbookID: {
       type: DataTypes.INTEGER,
       references: {

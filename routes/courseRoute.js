@@ -6,8 +6,13 @@ const courseControll = new courseController();
 
 // Assign a book to a course by courseID
 CourseRouter.put('/assignbook', courseControll.assignBook);
-
-// Retrieve the assigned book for a course by courseID
 CourseRouter.get('/getbook', courseControll.retrieveBook);
+
+// main apiss
+CourseRouter.get("/Listing", courseControll.getListingsFromTables);
+CourseRouter.post("/", courseControll.addcourse);
+CourseRouter.get("/:id", courseControll.getcourseById);
+CourseRouter.get("/:id", courseControll.updateCourse);
+CourseRouter.get("/:id", courseControll.deleteCourse);
 
 export default CourseRouter;

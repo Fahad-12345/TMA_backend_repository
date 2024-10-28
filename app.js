@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from "cors";
 import bodyParser from 'body-parser';
 // routes
 import UserRouter from './routes/userRoutes.js'; 
@@ -11,18 +12,21 @@ import CourseRouter from './routes/courseRoute.js';
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-// app.use('/api/users', UserRouter);
-// app.use('/api/textbooks', TextBookrouter);
-// app.use('/api/secEmployee', secEmprouter);
-app.use('/api/requests', Reqrouter);
-// app.use('/api/inventories', InventoryRouter);
-// app.use('/api/instructors', InstructorRouter);
-// app.use('/api/courses', CourseRouter);
+app.use('/api/users', UserRouter);
+app.use('/api/textbooks', TextBookrouter);
+app.use('/api/secEmployee', secEmprouter);
+app.use('/api/requests', Reqrouter);  // testing required
+app.use('/api/inventories', InventoryRouter);
+app.use('/api/instructors', InstructorRouter);
+app.use('/api/courses', CourseRouter);
 
 // Other middleware and route configurations
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(8080, () => {
+  console.log('Server is running on port 8080');
 });
 

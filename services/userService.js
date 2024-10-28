@@ -9,26 +9,65 @@ export class UserService  {
     
 
     register = async (userData) => {
-        try {
-            console.log('User data received for registration:', userData); // Log incoming data
+    //////////////////////// test data 
+    const { email, password } = req.body;
+  try {
+    // Find the superadmin user in the database
+    const isSuperAdmin = await User.findOne({ where: { Role : 'Admin' } });
+
+    if (!isSuperAdmin) {
+      return res.status(401).json({ message: "Superadmin not found" });
+    }
+
+    // Check if the superadmin is authenticated (based on the JWT token)
+    const token =
+      req.headers.authorization && req.headers.authorization.split(" ")[1];
+
+    //console.log(token);
+    if (!token) {
+      return res.status(403).json({ message: "Access denied" });
+    }
+    // console.log(token);
+    // Verify the JWT token
+    const decodedToken = jwt.verify(token, "1122");
+    if (decodedToken.email !== isSuperAdmin.email) {
+      return res.status(403).json({ message: "Access denied" });
+    }
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 2);
+    console.log(hashedPassword);
+
+    // Create the new user in the database
+    await users.create({ email, password: hashedPassword });
+    //await newUser.update({ Registered_Users: email });
+    console.log(users);
+    return res.status(201).json({ message: "User registered successfully" });
+  } catch (error) {
+    console.error("Error during user registration", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+    ///////////////////
+        // try {
+        //     console.log('User data received for registration:', userData); // Log incoming data
     
-            const { Name, Role, Email, Password } = userData;
-            if (!Name || !Role || !Email || !Password) {
-                throw new Error('All fields are required.');
-            }
+        //     const { Name, Role, Email, Password } = userData;
+        //     if (!Name || !Role || !Email || !Password) {
+        //         throw new Error('All fields are required.');
+        //     }
     
-            console.log('Password before hashing:', Password); // Log the password
+        //     console.log('Password before hashing:', Password); // Log the password
     
-            // Hash the password before saving
-            const hashedPassword = await bcrypt.hash(Password, 10);
-            const newUser = await User.create({ Name, Role, Email, Password: hashedPassword });
+        //     // Hash the password before saving
+        //     const hashedPassword = await bcrypt.hash(Password, 10);
+        //     const newUser = await User.create({ Name, Role, Email, Password: hashedPassword });
     
-            // Remove the password from the returned data for security
-            const { Password: _, ...userWithoutPassword } = newUser.toJSON();
-            return userWithoutPassword;
-        } catch (error) {
-            throw new Error('Error registering user: ' + error.message);
-        }
+        //     // Remove the password from the returned data for security
+        //     const { Password: _, ...userWithoutPassword } = newUser.toJSON();
+        //     return userWithoutPassword;
+        // } catch (error) {
+        //     throw new Error('Error registering user: ' + error.message);
+        // }
     };
     
 
