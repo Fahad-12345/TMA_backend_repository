@@ -5,44 +5,54 @@ export class textbookController {
         this.textbookService = new textbookService()
     }
 
- add = async (req, res) => {
-    try {
-        const newTextbook = await this.textbookService.add(req.body);
-        res.status(201).json(newTextbook);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    addtextbook = async (req, res) => {
+        // console.log(req.body,'reqq')
+        try {
+            const addcourse = await this.textbookService.addtextbook(req);
+            res.status(200).json(addcourse);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     }
-};
-
-remove = async (req, res) => {
-    try {
-        const { bookID } = req.params;
-        const result = await this.textbookService.remove(bookID);
-        res.status(200).json(result);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    
+    getTextbookById = async (req, res) => {
+        const { id: textbookID } = req.params; 
+        console.log(textbookID, 'reqq');
+        
+        if (!textbookID) {
+            return res.status(400).json({ error: "textbook ID is required" });
+        }
+    
+        try {
+            const textbook = await this.textbookService.getTextbookById(textbookID); 
+            if (textbook) {
+                res.status(200).json(textbook);
+            } else {
+                res.status(404).json({ error: "textbook not found" });
+            }
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    };
+    
+    
+    updatetextbook = async (req, res) => {
+        // console.log(req.body,'Updatereqq')
+        try {
+            const updateCourse = await this.textbookService.updatetextbook(req);
+            res.status(200).json(updateCourse);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     }
-};
-
- setStatus = async (req, res) => {
-    try {
-        const { bookID } = req.params;
-        const { status } = req.body;
-        const updatedTextbook = await this.textbookService.setStatus(bookID, status);
-        res.status(200).json(updatedTextbook);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    
+    deletetextbook = async (req, res) => {
+        console.log(req.body,'reqq')
+        try {
+            const deleteCourse = await this.textbookService.deletetextbook(req);
+            res.status(200).json(deleteCourse);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     }
-};
-
- updateStatus = async (req, res) => {
-    try {
-        const { bookID } = req.params;
-        const { status } = req.body;
-        const updatedTextbook = await this.textbookService.updateStatus(bookID, status);
-        res.status(200).json(updatedTextbook);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-}
 }

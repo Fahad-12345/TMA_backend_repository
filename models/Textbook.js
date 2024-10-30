@@ -6,18 +6,20 @@ class Textbook extends Model {
     static associate(models) {
         // Define relationships here
 
+
+        // Textbook belongs to Courses
+        Textbook.belongsTo(models.Course, {
+            foreignKey: 'textbookID',
+            sourceKey: 'textbookID',
+        });
+
         // Textbook has many Inventories
         Textbook.hasMany(models.Inventory, {
             foreignKey: 'textbookID',
             sourceKey: 'textbookID',
         });
 
-        // Textbook has many Courses
-        Textbook.hasMany(models.Course, {
-            foreignKey: 'textbookID',
-            sourceKey: 'textbookID',
-            as: 'courses'
-        });
+        
     }
 }
 
@@ -30,7 +32,14 @@ Textbook.init(
             autoIncrement: true,
             allowNull: false,
         },
-        title: {
+        courseID: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'Course',
+              key: 'courseID',
+            },
+          },
+        textBooktitle: {
             type: DataTypes.STRING,
             allowNull: true, // Change to false if title is mandatory
         },
@@ -50,6 +59,23 @@ Textbook.init(
             type: DataTypes.STRING,
             allowNull: true, // Change to false if availability status is mandatory
         },
+        e_book: { // New column
+            type: DataTypes.BOOLEAN, // Assuming this indicates if an e-book is available
+            defaultValue: false,
+          },
+          hard_copies: { // New column
+            type: DataTypes.INTEGER, // Number of hard copies available
+            defaultValue: 0,
+          },
+          date_of_publish: { // New column
+            type: DataTypes.DATE, // Date when the book was published
+          },
+          latest_version: { // New column
+            type: DataTypes.STRING, // Latest version information
+          },
+          old_version: { // New column
+            type: DataTypes.STRING, // Old version information
+          },
     },
     {
         sequelize,

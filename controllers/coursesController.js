@@ -19,7 +19,7 @@ export class courseController {
 
 // Retrieve the assigned book for a course
  retrieveBook = async (req, res) => {
-    console.log(req.body,'reqq')
+    
     try {
         const assignedBook = await this.courseServc.retrieveBook(req);
         res.status(200).json(assignedBook);
@@ -29,7 +29,7 @@ export class courseController {
 }
 
 addcourse = async (req, res) => {
-    console.log(req.body,'reqq')
+    // console.log(req.body,'reqq')
     try {
         const addcourse = await this.courseServc.addcourse(req);
         res.status(200).json(addcourse);
@@ -40,7 +40,7 @@ addcourse = async (req, res) => {
 
 getcourseById = async (req, res) => {
     const { id: courseID } = req.params; 
-    console.log(courseID, 'reqq');
+    // console.log(courseID, 'reqq');
     
     if (!courseID) {
         return res.status(400).json({ error: "Course ID is required" });
@@ -60,7 +60,7 @@ getcourseById = async (req, res) => {
 
 
 updateCourse = async (req, res) => {
-    console.log(req.body,'reqq')
+    // console.log(req.body,'Updatereqq')
     try {
         const updateCourse = await this.courseServc.updateCourse(req);
         res.status(200).json(updateCourse);

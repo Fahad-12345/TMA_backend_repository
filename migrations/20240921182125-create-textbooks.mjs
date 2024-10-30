@@ -7,6 +7,13 @@ export const up = async (queryInterface) => {
       primaryKey: true,
       autoIncrement: true, 
     },
+    courseID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'courses',
+        key: 'courseID',
+      },
+    },
     textBooktitle: {
       type: DataTypes.STRING,
     },
@@ -21,6 +28,23 @@ export const up = async (queryInterface) => {
     },
     availabilityStatus: {
       type: DataTypes.STRING,
+    },
+    e_book: { // New column
+      type: DataTypes.BOOLEAN, // Assuming this indicates if an e-book is available
+      defaultValue: false,
+    },
+    hard_copies: { // New column
+      type: DataTypes.INTEGER, // Number of hard copies available
+      defaultValue: 0,
+    },
+    date_of_publish: { // New column
+      type: DataTypes.DATE, // Date when the book was published
+    },
+    latest_version: { // New column
+      type: DataTypes.STRING, // Latest version information
+    },
+    old_version: { // New column
+      type: DataTypes.STRING, // Old version information
     },
     createdAt: {
       allowNull: false,

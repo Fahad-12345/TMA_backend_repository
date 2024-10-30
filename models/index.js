@@ -17,20 +17,20 @@ const sequelize = new Sequelize('TMA', 'postgres', '12345', {
 const models = {
   User: User.init(sequelize, Sequelize.DataTypes),
   SecEmployee: SecEmployee.init(sequelize, Sequelize.DataTypes),
+  Course: Course.init(sequelize, Sequelize.DataTypes),
   Instructor: Instructor.init(sequelize, Sequelize.DataTypes),
   Textbook: Textbook.init(sequelize, Sequelize.DataTypes),
   Inventory: Inventory.init(sequelize, Sequelize.DataTypes),
-  Course: Course.init(sequelize, Sequelize.DataTypes),
   Request: Request.init(sequelize, Sequelize.DataTypes),
 };
 
 // Define relationships
 User.associate(models);
 SecEmployee.associate(models);
+Course.associate(models);
 Instructor.associate(models);
 Textbook.associate(models);
 Inventory.associate(models);
-Course.associate(models);
 Request.associate(models);
 
 // Sync all models

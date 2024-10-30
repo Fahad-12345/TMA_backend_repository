@@ -25,13 +25,6 @@ export const up = async (queryInterface) => {
     year: {
       type: DataTypes.INTEGER,
     },
-    textbookID: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'textbooks',
-        key: 'textbookID',
-      },
-    },
     instructorID: {
       type: DataTypes.INTEGER,
       references: {

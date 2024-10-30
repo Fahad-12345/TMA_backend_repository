@@ -5,63 +5,7 @@ import Textbook from '../models/Textbook.js';
 
 
 export class courseService {
-
-// // Assign a book to a course by updating the bookID
-//  assignBook = async (courseID, textbookID) => {
-//     try {
-//         const course = await Course.findOne({ where: { courseID } });
-//         if (!course) throw new Error('Course not found');
-
-//         course.textbookID = textbookID;
-//         await course.save();
-//         return course;
-//     } catch (error) {
-//         throw new Error('Error assigning book: ' + error.message);
-//     }
-// };
-
-// /// Retrieve the book assigned to a course
-// retrieveBook = async (req, res) => {
-//     const { courseID } = req.body; // Ensure courseID is in the request body
-//     console.log(req.body, 'req body');
-    
-//     try {
-//         const courseWithTextbook = `
-//             SELECT c.*, t."textBooktitle", t."author",t."ISBN",t."edition",t."availabilityStatus"
-//             FROM courses c
-//             LEFT JOIN textbooks t ON c."textbookID" = t."textbookID"
-//             WHERE c."courseID" = '${courseID}'
-//         `;
-        
-//         const result = await sequelize.query(courseWithTextbook);
-//         const result1 = result[0]; // This is the array containing the result
-
-//         console.log(result1, 'result1'); // Log to see the structure
-        
-//         // Check if there are any results
-//         if (result1.length === 0) {
-//             return res.status(404).json({ error: 'No course found' });
-//         }
-        
-//         // Get the first course record
-//         const courseData = result1[0]; // Access the first element
-//         const textbook =  { textBooktitle : courseData.textBooktitle, author: courseData.author,
-//             ISBN:courseData.ISBN,edition:courseData.edition,availabityStatus:courseData.availabilityStatus };
-//         console.log(textbook,'tttt')
-
-//         // Return the associated textbook details
-//         return textbook;
-        
-//     } catch (error) {
-//         // Ensure that `res` is valid before trying to send an error response
-//         if (res) {
-//             return res.status(500).json({ error: 'Error retrieving assigned book: ' + error.message });
-//         } else {
-//             console.error('Response object is undefined', error);
-//         }
-//     }
-// }
-///////////////sample data /////////////////
+  
 addcourse = async (req, res) => {
   console.log(req.body,'111111111111')
   try {
@@ -84,7 +28,8 @@ addcourse = async (req, res) => {
     }
     const newCourse = await Course.create(req.body);
     if(newCourse){
-    return newCourse.courseID
+      console.log(newCourse,'nnnnnnnn')
+    return newCourse
     }
     else{
       console.error
@@ -99,7 +44,7 @@ addcourse = async (req, res) => {
 getcourseById = async (courseID) => {
   try {
       const course = await Course.findByPk(courseID);
-      console.log(course,'course')
+      // console.log(course,'course')
       return course;
   } catch (error) {
       throw new Error("Failed to retrieve course");
@@ -108,19 +53,22 @@ getcourseById = async (courseID) => {
 
 
 updateCourse = async (req, res) => {
-  const id = req.params.id;
+  const { id: courseID } = req.params; 
+  console.log(courseID,'update ID')
   try {
-    const existingPatient = await Patient.findByPk(id);
-    if (!existingPatient) {
+    const existingCourse = await Course.findByPk(courseID);
+    if (!existingCourse) {
       return res.status(404).json({ error: "Patient not found" });
     }
-    await Patient.update(req.body, { where: { id } });
+    const updatedCourse = await Course.update(req.body, { where: {courseID } });
+
+    return updatedCourse;
 
     // Update associated records
 
     //await Case.update(req.body, { where: { CaseId: id } });
 
-    const updatedPatient1 = await Patient.findByPk(id);
+    // const updatedPatient1 = await Patient.findByPk(id);
     res.status(201).json(updatedPatient1);
   } catch (error) {
     console.error(error);
@@ -194,11 +142,18 @@ getListingsFromTables = async (req, res) => {
 		     c."courseName" AS Course_Name,
          c."semester" AS Semester,
          c."year" AS enrollment_year,
+         textbook."textbookID" AS textbook_id,
 		     textbook."textBooktitle" AS Assign_Book,
+         textbook."edition" AS edition,
+					 textbook."availabilityStatus" AS availabilityStatus,
+					 textbook."e_book" AS e_book,
+					 textbook."hard_copies" AS hard_copies,
+					 textbook."date_of_publish" AS date_of_publish,
+           inv."InventoryID" AS inventory_id,
 		     inv."quantityAvailable",
 		    inv."quantityOnLoan"
         FROM courses as C
-        LEFT JOIN textbooks as textbook ON C."textbookID" = textbook."textbookID"
+        LEFT JOIN textbooks as textbook ON C."courseID" = textbook."textbookID"
         LEFT JOIN inventories as inv ON textbook."textbookID" = inv."textbookID"
         ${whereClause}
         LIMIT ${pageSize} OFFSET ${offset};

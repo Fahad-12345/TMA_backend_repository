@@ -28,7 +28,20 @@ const sequelize = new Sequelize(database, username, password, {
 async function runSeeders() {
     const seedersDir = path.join(__dirname, 'seeders'); // Point to the seeders folder
     const seederFiles = await fs.readdir(seedersDir);
-    for (const file of seederFiles) {
+     
+    // Define the specific order of migrations
+    const SeederOrder = ['20241024160405-seed-users.mjs', 
+        '20241024160511-seed-sec-employees.mjs','20241024160524-seed-instructors.mjs',
+        '20241024160611-seed-courses.mjs','20241024160538-seed-textbooks.mjs',
+        '20241024160551-seed-inventories.mjs','20241024160626-seed-requests.mjs',
+    ];
+
+    // Filter and sort migration files based on the defined order
+    const sortedSeeders = SeederOrder.filter(file => seederFiles.includes(file));
+
+
+
+    for (const file of sortedSeeders) {
         if (file.endsWith('.mjs')) {
             const seederPath = path.join(seedersDir, file);
             const { up } = await import(`file://${seederPath}`); // Use file URL format

@@ -8,10 +8,9 @@ class Course extends Model {
         // Define relationships here
 
         // Course belongs to Textbook
-        Course.belongsTo(models.Textbook, {
+        Course.hasMany(models.Textbook, {
             foreignKey: 'textbookID',
             targetKey: 'textbookID',
-            as: 'textbook'
         });
 
         // Course belongs to Instructor
@@ -61,14 +60,14 @@ Course.init(
           year: {
             type: DataTypes.INTEGER,
           },
-        textbookID: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: Textbook,
-                key: 'textbookID',
-            },
-        },
+        // textbookID: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true,
+        //     references: {
+        //         model: 'Textbook',
+        //         key: 'textbookID',
+        //     },
+        // },
         instructorID: {
             type: DataTypes.INTEGER,
             allowNull: true,

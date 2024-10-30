@@ -29,10 +29,24 @@ async function undoMigrations() {
     const migrationsDir = path.join(__dirname, 'migrations'); // Point to the migrations folder
     const migrationFiles = await fs.readdir(migrationsDir);
 
-    // Sort files in reverse order to undo in the correct sequence
-    migrationFiles.sort().reverse();
+    // Define the specific order of migrations
+    const migrationOrder = [
+        '20240921182130-create-requests.mjs',
+        '20240921182127-create-inventories.mjs',
+        '20240921182125-create-textbooks.mjs',
+        '20240921182129-create-courses.mjs',
+        '20240921182124-create-instructors.mjs',
+        '20240921182122-create-sec-employees.mjs',
+        '20240921182120-create-users.mjs'
+    ];
 
-    for (const file of migrationFiles) {
+    // Filter and sort migration files based on the defined order
+    const sortedMigrations = migrationOrder.filter(file => migrationFiles.includes(file));
+
+    // // Sort files in reverse order to undo in the correct sequence
+    // migrationFiles.sort().reverse();
+
+    for (const file of sortedMigrations) {
         if (file.endsWith('.mjs')) {
             const migrationPath = path.join(migrationsDir, file);
             const { down } = await import(`file://${migrationPath}`); // Use file URL format

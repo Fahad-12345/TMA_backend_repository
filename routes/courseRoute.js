@@ -12,7 +12,7 @@ CourseRouter.get('/getbook', courseControll.retrieveBook);
 CourseRouter.get("/Listing", courseControll.getListingsFromTables);
 CourseRouter.post("/", courseControll.addcourse);
 CourseRouter.get("/:id", courseControll.getcourseById);
-CourseRouter.get("/:id", courseControll.updateCourse);
+CourseRouter.put("/:id", courseControll.updateCourse);
 CourseRouter.get("/:id", courseControll.deleteCourse);
 
 export default CourseRouter;
