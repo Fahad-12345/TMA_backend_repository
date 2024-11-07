@@ -1,98 +1,101 @@
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/db.js';
-import Textbook from './Textbook.js';
-
+import { Model, DataTypes } from "sequelize";
+import sequelize from "../config/db.js";
+import Textbook from "./Textbook.js";
 
 class Course extends Model {
-    static associate(models) {
-        // Define relationships here
+  static associate(models) {
+    // Define relationships here
 
-        // Course belongs to Textbook
-        Course.hasMany(models.Textbook, {
-            foreignKey: 'textbookID',
-            targetKey: 'textbookID',
-        });
+    // Course belongs to Textbook
+    Course.hasMany(models.Textbook, {
+      foreignKey: "textbookID",
+      targetKey: "textbookID",
+    });
 
-        // Course belongs to Instructor
-        Course.belongsTo(models.Instructor, {
-            foreignKey: 'instructorID',
-            targetKey: 'instructorID',
-        });
+    // Course belongs to Instructor
+    Course.belongsTo(models.Instructor, {
+      foreignKey: "instructorID",
+      targetKey: "instructorID",
+    });
 
-        // Course belongs to SecEmployee
-        Course.belongsTo(models.SecEmployee, {
-            foreignKey: 'sec_Employee_ID',
-            targetKey: 'employeeID',
-        });
+    // Course belongs to SecEmployee
+    Course.belongsTo(models.SecEmployee, {
+      foreignKey: "sec_Employee_ID",
+      targetKey: "employeeID",
+    });
 
-        // Course has many Requests
-        Course.hasMany(models.Request, {
-            foreignKey: 'courseID',
-            sourceKey: 'courseID',
-        });
-    }
+    // Course has many Requests
+    Course.hasMany(models.Request, {
+      foreignKey: "courseID",
+      sourceKey: "courseID",
+    });
+  }
 }
 
 // Initialize model schema with init
 Course.init(
-    {
-        courseID: {
-            type: DataTypes.STRING,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement:true
-        },
-        courseName: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        courseCode: {
-            type: DataTypes.STRING(20),
-            allowNull: false,
-            unique: true,
-          },
-          description: {
-            type: DataTypes.TEXT,
-          },
-          semester: {
-            type: DataTypes.STRING(10),
-          },
-          year: {
-            type: DataTypes.INTEGER,
-          },
-        // textbookID: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true,
-        //     references: {
-        //         model: 'Textbook',
-        //         key: 'textbookID',
-        //     },
-        // },
-        instructorID: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'Instructor',
-                key: 'instructorID',
-            },
-        },
-        sec_Employee_ID: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'SecEmployee',
-                key: 'employeeID',
-            },
-        },
+  {
+    courseID: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        modelName: 'Course',
-        tableName: 'courses',
-        timestamps: true,
-        createdAt: 'createdAt',
-        updatedAt: 'updatedAt',
-    }
+    courseName: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    courseCode: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+      unique: true,
+    },
+    description: {
+      type: DataTypes.TEXT,
+    },
+    semester: {
+      type: DataTypes.STRING(10),
+    },
+    year: {
+      type: DataTypes.INTEGER,
+    },
+    // textbookID: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: true,
+    //     references: {
+    //         model: 'Textbook',
+    //         key: 'textbookID',
+    //     },
+    // },
+    instructorID: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "Instructor",
+        key: "instructorID",
+      },
+      onDelete: "CASCADE", // this will allow cascading deletes
+      onUpdate: "CASCADE",
+    },
+    sec_Employee_ID: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "SecEmployee",
+        key: "employeeID",
+      },
+      onDelete: "CASCADE", // this will allow cascading deletes
+      onUpdate: "CASCADE",
+    },
+  },
+  {
+    sequelize,
+    modelName: "Course",
+    tableName: "courses",
+    timestamps: true,
+    createdAt: "createdAt",
+    updatedAt: "updatedAt",
+  }
 );
 
 export default Course;

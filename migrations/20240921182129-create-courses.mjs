@@ -1,12 +1,12 @@
-import { DataTypes, Sequelize } from 'sequelize';
+import { DataTypes, Sequelize } from "sequelize";
 
 export const up = async (queryInterface) => {
-  await queryInterface.createTable('courses', {
+  await queryInterface.createTable("courses", {
     courseID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true, 
+      autoIncrement: true,
     },
     courseName: {
       type: DataTypes.STRING,
@@ -28,30 +28,34 @@ export const up = async (queryInterface) => {
     instructorID: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'instructors',
-        key: 'instructorID',
+        model: "instructors",
+        key: "instructorID",
       },
+      onDelete: "CASCADE", // this will allow cascading deletes
+      onUpdate: "CASCADE",
     },
     sec_Employee_ID: {
       type: DataTypes.INTEGER,
       references: {
-          model: 'sec_employees', 
-          key: 'employeeID',
+        model: "sec_employees",
+        key: "employeeID",
       },
-  },
+      onDelete: "CASCADE", // this will allow cascading deletes
+      onUpdate: "CASCADE",
+    },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
     updatedAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
   });
 };
 
 export const down = async (queryInterface) => {
-  await queryInterface.dropTable('courses');
+  await queryInterface.dropTable("courses");
 };

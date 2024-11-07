@@ -1,20 +1,22 @@
-import { DataTypes, Sequelize } from 'sequelize';
+import { DataTypes, Sequelize } from "sequelize";
 
 export const up = async (queryInterface) => {
-  await queryInterface.createTable('inventories', {
-    InventoryID:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true, 
+  await queryInterface.createTable("inventories", {
+    InventoryID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
     textbookID: {
       foreignkey: true,
       type: DataTypes.INTEGER,
       references: {
-        model: 'textbooks',
-        key: 'textbookID',
-      }
+        model: "textbooks",
+        key: "textbookID",
+      },
+      onDelete: "CASCADE", // this will allow cascading deletes
+      onUpdate: "CASCADE",
     },
     quantityAvailable: {
       type: DataTypes.STRING,
@@ -25,16 +27,16 @@ export const up = async (queryInterface) => {
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
     updatedAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
   });
 };
 
 export const down = async (queryInterface) => {
-  await queryInterface.dropTable('inventories');
+  await queryInterface.dropTable("inventories");
 };

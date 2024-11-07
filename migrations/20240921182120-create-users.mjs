@@ -1,20 +1,20 @@
-import { DataTypes, Sequelize } from 'sequelize';
+import { DataTypes, Sequelize } from "sequelize";
 
 export const up = async (queryInterface) => {
-  await queryInterface.createTable('users', {
+  await queryInterface.createTable("users", {
     userID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true, 
+      autoIncrement: true,
     },
     Name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     Role: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     Email: {
       type: DataTypes.STRING,
@@ -28,17 +28,16 @@ export const up = async (queryInterface) => {
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
     updatedAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
   });
 };
 
-
 export const down = async (queryInterface) => {
-  await queryInterface.dropTable('users');
+  await queryInterface.dropTable("users");
 };

@@ -1,10 +1,9 @@
 import { text } from "express";
-import  Textbook  from "../models/Textbook.js";
-
+import Textbook from "../models/Textbook.js";
+import Course from "../models/Course.js";
 export class textbookService {
-// Add a new textbook
-addtextbook = async (req, res) => {
-    
+  // Add a new textbook
+  addtextbook = async (req, res) => {
     try {
       const {
         courseID,
@@ -12,13 +11,13 @@ addtextbook = async (req, res) => {
         author,
         ISBN,
         edition,
-        date_of_publish
+        date_of_publish,
       } = req.body;
-  
+
       if (
         !courseID ||
         !textBooktitle ||
-        !author||
+        !author ||
         !ISBN ||
         !edition ||
         !date_of_publish
@@ -28,48 +27,46 @@ addtextbook = async (req, res) => {
           .json({ error: "All courses attributes are required" });
       }
       const newtextbook = await Textbook.create(req.body);
-      if(newtextbook){
-      return newtextbook
-      }
-      else{
-        console.error
+      if (newtextbook) {
+        return newtextbook;
+      } else {
+        console.error;
       }
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Internal server error" });
     }
   };
-  
-  
-  getTextbookById = async (textbookID) => {
 
+  getTextbookById = async (textbookID) => {
     try {
-        const textbook = await Textbook.findByPk(textbookID)
-        console.log(textbook,'textbook')
-        return textbook
-        // return res.json(textbook); 
+      const textbook = await Textbook.findByPk(textbookID);
+      console.log(textbook, "textbook");
+      return textbook;
+      // return res.json(textbook);
     } catch (error) {
-        throw new Error("Failed to retrieve textbook");
+      throw new Error("Failed to retrieve textbook");
     }
   };
-  
-  
+
   updatetextbook = async (req, res) => {
-    const { id: courseID } = req.params; 
-    console.log(courseID,'update ID')
+    const { id: courseID } = req.params;
+    console.log(courseID, "update ID");
     try {
       const existingCourse = await Course.findByPk(courseID);
       if (!existingCourse) {
         return res.status(404).json({ error: "Patient not found" });
       }
-      const updatedCourse = await Course.update(req.body, { where: {courseID } });
-  
+      const updatedCourse = await Course.update(req.body, {
+        where: { courseID },
+      });
+
       return updatedCourse;
-  
+
       // Update associated records
-  
+
       //await Case.update(req.body, { where: { CaseId: id } });
-  
+
       // const updatedPatient1 = await Patient.findByPk(id);
       res.status(201).json(updatedPatient1);
     } catch (error) {
@@ -77,7 +74,7 @@ addtextbook = async (req, res) => {
       res.status(500).json({ error: "Internal server error" });
     }
   };
-  
+
   deletetextbook = async (req, res) => {
     try {
       const id = req.params.id;

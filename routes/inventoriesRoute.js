@@ -1,10 +1,12 @@
-import { Router } from 'express';
-import { inventoriesController } from '../controllers/inventoriesController.js';
+import { Router } from "express";
+import { inventoriesController } from "../controllers/inventoriesController.js";
 
 const InventoryRouter = Router();
-const invController = new inventoriesController(); 
+const invController = new inventoriesController();
 
-// Update inventory by textbookID
-InventoryRouter.put('/:textbookID', invController.updateInventory);
+InventoryRouter.post("/", invController.addInventory);
+InventoryRouter.get("/:id", invController.getInventoryById);
+InventoryRouter.put("/:id", invController.updateInventory);
+InventoryRouter.get("/:id", invController.deleteInventory);
 
 export default InventoryRouter;
