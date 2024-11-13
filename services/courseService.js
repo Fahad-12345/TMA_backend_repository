@@ -1,23 +1,21 @@
-import { text } from "express";
 import sequelize from "../config/db.js";
 import Course from "../models/Course.js";
 import Textbook from "../models/Textbook.js";
 import Inventory from "../models/Inventory.js";
+import { AvailabilityStatus, TextbookType } from "../shared/common.js";
 
 export class courseService {
   addcourse = async (req, res) => {
-    console.log(req.body, "111111111111");
     try {
-      const { course_name, courseCode, semester, year } = req.body;
+      const { courseName, courseCode, semester, year } = req.body;
 
-      if (!course_name || !courseCode || !semester || !year) {
+      if (!courseName || !courseCode || !semester || !year) {
         return res
           .status(400)
           .json({ error: "All courses attributes are required" });
       }
       const newCourse = await Course.create(req.body);
       if (newCourse) {
-        console.log(newCourse, "nnnnnnnn");
         return newCourse;
       } else {
         console.error;
@@ -31,7 +29,7 @@ export class courseService {
   getcourseById = async (courseID) => {
     try {
       const course = await Course.findByPk(courseID);
-      // console.log(course,'course')
+
       return course;
     } catch (error) {
       throw new Error("Failed to retrieve course");
@@ -51,13 +49,6 @@ export class courseService {
       });
 
       return updatedCourse;
-
-      // Update associated records
-
-      //await Case.update(req.body, { where: { CaseId: id } });
-
-      // const updatedPatient1 = await Patient.findByPk(id);
-      res.status(201).json(updatedPatient1);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Internal server error" });
@@ -76,8 +67,6 @@ export class courseService {
       await Textbook.destroy({ where: { textbookID: id } });
       await Course.destroy({ where: { courseID: id } });
       return { Inventory, Textbook, Course };
-      // await res.status(200).send({ Course, Textbook, Inventory });
-      // console.log(res);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Internal server error" });
@@ -120,6 +109,33 @@ export class courseService {
           ? ` AND textbook."textBooktitle" LIKE '${filters.assigned_book}'`
           : "");
 
+      if (
+        isNotEmpty(filters.availabilityStatus) &&
+        (filters.availabilityStatus === AvailabilityStatus.AVAILABLE ||
+          filters.availabilityStatus === AvailabilityStatus.NON_AVAILABLE)
+      ) {
+        conditions += ` AND textbook."availabilityStatus" LIKE '${filters.availabilityStatus}'`;
+      }
+
+      if (
+        isNotEmpty(filters.textbookType) &&
+        filters.textbookType === TextbookType.ebook
+      ) {
+        conditions += ` AND textbook."e_book" = true`;
+      }
+      if (
+        isNotEmpty(filters.textbookType) &&
+        filters.textbookType === TextbookType.hardcopy
+      ) {
+        conditions += ` AND textbook."hard_copy" = true`;
+      }
+      if (
+        isNotEmpty(filters.textbookType) &&
+        filters.textbookType === TextbookType.both
+      ) {
+        conditions += ` AND textbook."e_book" = true AND textbook."hard_copy" = true `;
+      }
+
       let whereClause = "";
       if (conditions !== "") {
         let outputString = conditions.replace(/^ AND\s*/, "");
@@ -136,17 +152,20 @@ export class courseService {
          textbook."textbookID" AS textbook_id,
 		     textbook."textBooktitle" AS Assign_Book,
          textbook."edition" AS edition,
-					 textbook."availabilityStatus" AS availabilityStatus,
-					 textbook."e_book" AS e_book,
-					 textbook."hard_copies" AS hard_copies,
-					 textbook."date_of_publish" AS date_of_publish,
-           inv."InventoryID" AS inventory_id,
-		     inv."quantityAvailable",
+				textbook."author" AS author,
+		     textbook."ISBN" AS isbn,
+		     textbook."latest_version" AS latest_version,
+		     textbook."old_version" AS old_version, 
+				textbook."date_of_publish" AS date_of_publish,
+        inv."InventoryID" AS inventory_id,
+		    inv."quantityAvailable",
 		    inv."quantityOnLoan"
         FROM courses as C
-        LEFT JOIN textbooks as textbook ON C."courseID" = textbook."textbookID"
+        LEFT JOIN textbooks as textbook ON C."courseID" = textbook."courseID"
         LEFT JOIN inventories as inv ON textbook."textbookID" = inv."textbookID"
         ${whereClause}
+        ORDER BY
+		    c."courseID"
         LIMIT ${pageSize} OFFSET ${offset};
       `;
 

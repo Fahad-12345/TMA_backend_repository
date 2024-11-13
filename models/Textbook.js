@@ -50,7 +50,7 @@ Textbook.init(
       allowNull: true, // Change to false if ISBN is mandatory
     },
     edition: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true, // Change to false if edition is mandatory
     },
     availabilityStatus: {
@@ -62,7 +62,11 @@ Textbook.init(
       type: DataTypes.BOOLEAN, // Assuming this indicates if an e-book is available
       defaultValue: false,
     },
-    hard_copies: {
+    hard_copy: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    no_of_hardCopies: {
       // New column
       type: DataTypes.INTEGER, // Number of hard copies available
       defaultValue: 0,

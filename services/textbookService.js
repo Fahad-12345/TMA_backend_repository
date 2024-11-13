@@ -50,18 +50,18 @@ export class textbookService {
   };
 
   updatetextbook = async (req, res) => {
-    const { id: courseID } = req.params;
-    console.log(courseID, "update ID");
+    const { id: textbookID } = req.params;
+    console.log(textbookID, "textbook ID");
     try {
-      const existingCourse = await Course.findByPk(courseID);
-      if (!existingCourse) {
+      const existingTextbook = await Textbook.findByPk(textbookID);
+      if (!existingTextbook) {
         return res.status(404).json({ error: "Patient not found" });
       }
-      const updatedCourse = await Course.update(req.body, {
-        where: { courseID },
+      const updatedTextbook = await Textbook.update(req.body, {
+        where: { textbookID },
       });
 
-      return updatedCourse;
+      return updatedTextbook;
 
       // Update associated records
 

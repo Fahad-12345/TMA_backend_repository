@@ -88,6 +88,11 @@ export class UserService {
       return { status: 500, message: "Server error" };
     }
   };
+
+  registeredUsers = async (userData) => {
+    let list = await User.findAll();
+    return list;
+  };
 }
 
 // Step 4: Hash the password for the new user

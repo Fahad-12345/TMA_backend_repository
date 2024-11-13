@@ -28,33 +28,12 @@ export class UserController {
     }
   };
 
-  logout = async (req, res) => {
+  getusersList = async (req, res) => {
     try {
-      const result = await this.userService.logout(req.body);
+      const result = await this.userService.registeredUsers(req.body);
       res.status(200).json(result);
     } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  };
-
-  updateProfile = async (req, res) => {
-    try {
-      const userId = req.user.id; // Access user ID from req.user set by middleware
-      const updateFields = req.body;
-
-      const user = await User.findByPk(userId);
-      console.log(user);
-      if (!user) {
-        return res.status(404).json({ error: "User not found" });
-      }
-
-      await user.update(updateFields);
-      const { password, ...updatedUser } = user.toJSON();
-      res.status(200).json(updatedUser);
-    } catch (error) {
-      res
-        .status(500)
-        .json({ error: "Profile update failed: " + error.message });
+      res.status(500).Json({ error: "Error getting registered Users" });
     }
   };
 }
